@@ -60,8 +60,8 @@
       <li id="finance" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
           aria-expanded="true" aria-controls="collapseBootstrap2">
-          <i class="fas fa-money-bill"></i>
-          <span>Kesihatan</span>
+          <i class="fas fa-head-side-cough"></i></i>
+          <span>Pesakit</span>
         </a>
         <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
