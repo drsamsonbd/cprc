@@ -22,7 +22,9 @@
             </div> 
             </div>
         </div>
-        
+         <div class="form-group">
+          <button type="submit" id="category-insert-btn" class="btn btn-primary btn-block">Simpan</button>
+        </div>
         
       </form>      
                
@@ -817,7 +819,7 @@
        categoryInsert(){
        axios.post('/api/category',this.form)
        .then(() => { 
-       this.$refs['insert-modal'].hide('#insert-btn')  
+       this.$refs['category-insert-modal'].hide('#category-insert-btn')  
          this.allCategory();
         Notification.success()
        })

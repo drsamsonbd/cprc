@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="{{asset('asset/img/logo/hblnlogov2.png')}}" rel="icon">
-  <title>Inventory Management System| Hospital Beluran</title>
+  <title>Covid Management| Hospital Beluran</title>
   <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('asset/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('asset/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@
         <div class="sidebar-brand-icon">
           <img src="asset/img/logo/hblnlogov2.png">
         </div>
-        <div class="sidebar-brand-text mx-3">Inventory Management</div>
+        <div class="sidebar-brand-text mx-3">Covid Management</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -61,7 +61,7 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
           aria-expanded="true" aria-controls="collapseBootstrap2">
           <i class="fas fa-money-bill"></i>
-          <span>Kewangan</span>
+          <span>Kesihatan</span>
         </a>
         <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -89,7 +89,7 @@
           </div>
         </div>
       </li>
-  
+      <!--Item Management-->  
       <li id="items" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap3"
           aria-expanded="true" aria-controls="collapseBootstrap3">
@@ -105,7 +105,22 @@
           </div>
         </div>
       </li>
-
+        <!--Forms Management-->  
+        <li id="forms" class="nav-item" >
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
+          aria-expanded="true" aria-controls="collapseBootstrap4">
+          <i class="fab fa-wpforms"></i>
+          <span>Borang</span>
+        </a>
+        <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+           
+            <router-link class="collapse-item" to="/items">Borang</router-link>
+      <!--      <router-link class="collapse-item" to="/category">Kategori</router-link>-->
+            <router-link class="collapse-item" to="/itemsetting">Tetapan</router-link>
+          </div>
+        </div>
+      </li>
      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
           aria-expanded="true" aria-controls="collapseBootstrap4">

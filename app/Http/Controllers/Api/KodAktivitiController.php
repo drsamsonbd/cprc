@@ -59,7 +59,7 @@ class KodAktivitiController extends Controller
      */
     public function show($id)
     {
-        $aktiviti = DB::table('kod_ativitis')->where('id',$id)->first();
+        $aktiviti = DB::table('kod_aktivitis')->where('id',$id)->first();
         return response()->json($aktiviti);
     }
 

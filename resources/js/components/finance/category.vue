@@ -80,7 +80,7 @@
       </form>      
                
           
-      </b-modal>-->
+      </b-modal>
  <!--ol-->
 
   <b-modal ref="ol-insert-modal" hide-footer title="OBJEK LANJUT">
@@ -327,7 +327,10 @@
             <b-button size="sm" id="toggle-btn"  @click="toggleModal(row.item.id)" class="mr-1" v-b-tooltip.hover title="Edit">
            <i class="fas fa-edit"></i>
             </b-button>
-            <b-button size="sm" class="btn btn-sm btn-danger" @click="deleteCategory(row.item.id)" v-b-tooltip.hover title="Delete">
+            <b-button size="sm" class="
+            
+            
+            btn btn-sm btn-danger" @click="deleteCategory(row.item.id)" v-b-tooltip.hover title="Delete">
             <i class="fas fa-trash-alt"></i>
             </b-button>
         </template>

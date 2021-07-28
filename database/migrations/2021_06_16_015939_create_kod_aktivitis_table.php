@@ -17,7 +17,7 @@ class CreateKodAktivitisTable extends Migration
             $table->id();
             $table->string('aktiviti_code');
             $table->string('aktiviti_descriptions');
-            $table->string('ol_id');
+            $table->string('ol_code');
             $table->timestamps();
         });
     }
