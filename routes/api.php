@@ -22,7 +22,7 @@ Route::post('me', 'AuthController@me');
 
 });
 
-Route::apiResource('/category', 'Api\CategoryController');
+Route::apiResource('/patient', 'Api\PatientController');
 Route::apiResource('/user', 'Api\UserController');
 Route::apiResource('/department', 'Api\DepartmentController');
 Route::apiResource('/finance_category', 'Api\FinanceCategoryController');

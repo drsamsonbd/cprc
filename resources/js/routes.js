@@ -9,8 +9,8 @@ let logout = require('./components/auth/logout.vue').default;
 let user= require('./components/admin/user.vue').default;
 let department= require('./components/admin/department.vue').default;
 
- // Supplier Component 
- let storesupplier = require('./components/supplier/create.vue').default;
+ // Patient Component 
+ let patient = require('./components/patient/index.vue').default;
  let supplier = require('./components/supplier/index.vue').default;
  let editsupplier = require('./components/supplier/edit.vue').default;
 
@@ -51,8 +51,8 @@ export const routes = [
     // Category
     { path: '/category', component: category, name:'category' },
 
-      // Supplier Routes
-  { path: '/store-supplier', component: storesupplier, name:'store-supplier'},
+      // patient Routes
+  { path: '/patient', component: patient, name:'patient'},
   { path: '/supplier', component: supplier, name:'supplier'},
   { path: '/edit-supplier/:id', component: editsupplier, name:'edit-supplier'},
 

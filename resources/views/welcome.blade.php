@@ -66,7 +66,7 @@
         <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
            
-            <router-link class="collapse-item" to="/allocation">Peruntukan</router-link>
+            <router-link class="collapse-item" to="/patient">Senarai</router-link>
             <router-link class="collapse-item" to="/code">Kod Peruntukan</router-link>
           </div>
         </div>
@@ -77,7 +77,7 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStock"
           aria-expanded="true" aria-controls="collapseStock">
           <i class="fas fa-box-open"></i>
-          <span>Stok</span>
+          <span>Kesihatan</span>
         </a>
         <div id="collapseStock" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
