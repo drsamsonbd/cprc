@@ -9,50 +9,62 @@
    <div class="col-lg-12 ">
    
 
-    <b-modal ref="my-modal" hide-footer title="Daftar Pesakit">
+    <b-modal ref="my-modal" size="xl" hide-footer title="Daftar Pesakit">
     
            <form class="user" @submit.prevent="register">
-                    <div class="form-group">
+                  
+                      <b-row>
+                        <b-col>
                       <label>Nama</label>
                       <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama mengikut kad pengenalan" v-model="form.name">
                      <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
-                    </div>            
-                     <div class="form-group">
+                     </b-col>
+                     </b-row>
+                             
+                    <b-row>
+                      <b-col>
                       <label>Nombor K/P atau Passport</label>
                       <input type="text" class="form-control" id="ICnumber" v-model="form.kp_passport">
                          <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
-                    </div>
-                     <div class="form-group">
+                  </b-col>
+                   <b-col>
                       <label>Jantina</label>
                       <input type="text" class="form-control" id="gender" v-model="form.gender">
                          <small class="text-danger" v-if="errors.gender">{{errors.gender[0]}}</small>
-                    </div>
-                   <div class="form-group">
+                    </b-col>
+
+                     <b-col>
                       <label>Umur</label>
                       <input type="text" class="form-control" id="age" v-model="form.age">
                          <small class="text-danger" v-if="errors.age">{{errors.age[0]}}</small>
-                    </div>
+                    </b-col>
+                    </b-row>
                   
-                   <div class="form-group">
+                  <b-row>
+                  <b-col>
                       <label>Bangsa</label>
                       <input type="text" class="form-control" id="race" v-model="form.race">
                          <small class="text-danger" v-if="errors.race">{{errors.race[0]}}</small>
-                    </div>
-                    <div class="form-group">
+                   </b-col>
+                  <b-col>
                       <label>Warganegara</label>
                       <input type="text" class="form-control" id="nationality" v-model="form.nationality">
                          <small class="text-danger" v-if="errors.nationality">{{errors.nationality[0]}}</small>
-                    </div>
-                     <div class="form-group">
+                  </b-col>
+                  </b-row>
+
+                  <b-row>
+                     <b-col>
                       <label>Mukim</label>
                       <input type="text" class="form-control" id="area" v-model="form.area">
                          <small class="text-danger" v-if="errors.area">{{errors.area[0]}}</small>
-                    </div>
-                     <div class="form-group">
-                      <label>Daerah Daftar</label>
+                   </b-col>
+                    <b-col>
+                      <label>Daerah Daftar Kes</label>
                       <input type="text" class="form-control" id="case_district" v-model="form.case_district">
                          <small class="text-danger" v-if="errors.case_district">{{errors.case_district[0]}}</small>
-                    </div>
+                    </b-col>
+                    </b-row>
                      <div class="form-group">
                       <label>No. Tel</label>
                       <input type="text" class="form-control" id="phone" v-model="form.phone">
@@ -75,47 +87,81 @@
   
   <!--userUpdate Modal-->
   <div>
-  <b-modal ref="edit-modal" hide-footer title="Kemaskini Pengguna">     
-          <form class="user" @submit.prevent="userUpdate"> 
+  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Pengguna">     
+          <form class="user" @submit.prevent="patientUpdate"> 
                     <div class="form-group" hidden>
                       <label>User ID:</label>
                       <input type="hidden" class="form-control" id="exampleInputID" placeholder="ID" v-model="forms.id">
                      
                     </div>  
-                    <div class="form-group">
-                      <label>Nama Penuh</label>
-                      <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama penuh" v-model="forms.name">
+                 
+                      <b-row>
+                        <b-col>
+                      <label>Nama</label>
+                      <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama mengikut kad pengenalan" v-model="forms.name">
                      <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
-                    </div>            
-                    <div class="form-group">
-                      <label>Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
-                        placeholder="Alamat email" v-model="forms.email">
-                         <small class="text-danger" v-if="errors.email">{{errors.email[0]}}</small>
-                    </div>
-                     <div class="form-group">
-                      <label>IC Number</label>
-                      <input type="text" class="form-control" id="InputIC" aria-describedby="IClHelp"
-                        placeholder="Nombor Kad Pengenalan" v-model="forms.icno">
-                         <small class="text-danger" v-if="errors.icno">{{errors.icno[0]}}</small>
-                    </div>              
-                    <div class="form-group">
-                      <label>Role(s):</label>
-                     
-                        <input type="text" class="form-control" v-model="forms.roles">
-                     
-                    </div>
+                     </b-col>
+                     </b-row>
+                             
+                    <b-row>
+                      <b-col>
+                      <label>Nombor K/P atau Passport</label>
+                      <input type="text" class="form-control" id="ICnumber" v-model="forms.kp_passport">
+                         <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
+                  </b-col>
+                   <b-col>
+                      <label>Jantina</label>
+                      <input type="text" class="form-control" id="gender" v-model="forms.gender">
+                         <small class="text-danger" v-if="errors.gender">{{errors.gender[0]}}</small>
+                    </b-col>
 
-                    <div class="form-group">
-                      <label>Jabatan:</label>
-                      <select class="form-control" id="Jabatan" v-model="forms.current_team_id">
-                        <option v-for="department in departments "   v-bind:key="department.id" :value="department.id"> {{department.name_department}}</option>
-                        
-                        </select>
-                     
+                     <b-col>
+                      <label>Umur</label>
+                      <input type="text" class="form-control" id="age" v-model="forms.age">
+                         <small class="text-danger" v-if="errors.age">{{errors.age[0]}}</small>
+                    </b-col>
+                    </b-row>
+                  
+                  <b-row>
+                  <b-col>
+                      <label>Bangsa</label>
+                      <input type="text" class="form-control" id="race" v-model="forms.race">
+                         <small class="text-danger" v-if="errors.race">{{errors.race[0]}}</small>
+                   </b-col>
+                  <b-col>
+                      <label>Warganegara</label>
+                      <input type="text" class="form-control" id="nationality" v-model="forms.nationality">
+                         <small class="text-danger" v-if="errors.nationality">{{errors.nationality[0]}}</small>
+                  </b-col>
+                  </b-row>
+
+                  <b-row>
+                     <b-col>
+                      <label>Mukim</label>
+                      <input type="text" class="form-control" id="area" v-model="forms.area">
+                         <small class="text-danger" v-if="errors.area">{{errors.area[0]}}</small>
+                   </b-col>
+                    <b-col>
+                      <label>Daerah Daftar Kes </label>
+                      <input type="text" class="form-control" id="case_district" v-model="forms.case_district">
+                         <small class="text-danger" v-if="errors.case_district">{{errors.case_district[0]}}</small>
+                    </b-col>
+                    </b-row>
+                     <div class="form-group">
+                      <label>No. Tel</label>
+                      <input type="text" class="form-control" id="phone" v-model="forms.phone">
+                         <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
                     </div>
                     <div class="form-group">
-                      <button type="submit" id="myBtn" class="btn btn-primary btn-block" @click="UpdateUser(user.id)">Kemaskini</button>
+                      <label>Nota</label>
+                      <textarea input type="text" class="form-control" id="notes" v-model="forms.notes"></textarea>
+                         <small class="text-danger" v-if="errors.notes">{{errors.notes[0]}}</small>
+                    </div>
+                      
+                     
+                    
+                    <div class="form-group">
+                      <button type="submit" id="myBtn" class="btn btn-primary btn-block" @click="patientUpdate(patient.id)">Kemaskini</button>
                
                     </div>
                
@@ -123,7 +169,95 @@
    </b-modal>
    </div>
 <!--userUpdate Modal-->
+  
+  <!--viewModal-->
+  <div>
+  <b-modal ref="view-modal" size="xl" hide-footer title="Kemaskini Pengguna">     
+          <form class="patient" > 
+                    <div class="form-group" hidden>
+                      <label>User ID:</label>
+                      <input type="hidden" class="form-control" id="exampleInputID" placeholder="ID" v-model="views.id">
+                     
+                    </div>  
+                 
+                      <b-row>
+                        <b-col>
+                      <label>Nama</label>
+                      <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama mengikut kad pengenalan" v-model="views.name" disabled>
+                     <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
+                     </b-col>
+                     <b-col>
+                      <label>Nombor K/P atau Passport</label>
+                      <input type="text" class="form-control" id="ICnumber" v-model="views.kp_passport" disabled>
+                         <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
+                  </b-col>
+                     </b-row>
+                             
+                    <b-row>
+                      <b-col>
+                      <label>Nombor K/P atau Passport</label>
+                      <input type="text" class="form-control" id="ICnumber" v-model="views.kp_passport" disabled>
+                         <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
+                  </b-col>
+                   <b-col>
+                      <label>Jantina</label>
+                      <input type="text" class="form-control" id="gender" v-model="views.gender" disabled>
+                         <small class="text-danger" v-if="errors.gender">{{errors.gender[0]}}</small>
+                    </b-col>
 
+                     <b-col>
+                      <label>Umur</label>
+                      <input type="text" class="form-control" id="age" v-model="views.age" disabled>
+                         <small class="text-danger" v-if="errors.age">{{errors.age[0]}}</small>
+                    </b-col>
+                    </b-row>
+                  
+                  <b-row>
+                  <b-col>
+                      <label>Bangsa</label>
+                      <input type="text" class="form-control" id="race" v-model="views.race" disabled>
+                         <small class="text-danger" v-if="errors.race">{{errors.race[0]}}</small>
+                   </b-col>
+                    <b-col>
+                      <label>Mukim</label>
+                      <input type="text" class="form-control" id="area" v-model="views.area" disabled>
+                         <small class="text-danger" v-if="errors.area">{{errors.area[0]}}</small>
+                   </b-col>
+                  <b-col>
+                      <label>Warganegara</label>
+                      <input type="text" class="form-control" id="nationality" v-model="views.nationality" disabled>
+                         <small class="text-danger" v-if="errors.nationality">{{errors.nationality[0]}}</small>
+                  </b-col>
+                  </b-row>
+
+                  <b-row>
+                                       
+                    <b-col>
+                      <label>Daerah Daftar Kes</label>
+                      <input type="text" class="form-control" id="case_district" v-model="views.case_district" disabled>
+                         <small class="text-danger" v-if="errors.case_district">{{errors.case_district[0]}}</small>
+                    </b-col>
+                    <b-col>
+                      <label>No. Tel</label>
+                      <input type="text" class="form-control" id="phone" v-model="views.phone" disabled>
+                         <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
+                    </b-col>
+                    </b-row>
+                     
+                    <div class="form-group">
+                      <label>Nota</label>
+                      <textarea input type="text" class="form-control" id="notes" v-model="views.notes" disabled></textarea>
+                         <small class="text-danger" v-if="errors.notes">{{errors.notes[0]}}</small>
+                    </div>
+                      
+                     
+                    
+                
+               
+                  </form> 
+   </b-modal>
+   </div>
+<!--viewModal-->
 
 
  </div>
@@ -200,7 +334,11 @@
       stacked="md"
       show-empty
       small
-      @filtered="onFiltered"
+     
+      flex 
+      striped 
+      hover
+      @row-clicked="viewModal"
     >
      <template #cell(index)="data">
         {{ data.index + 1 }}
@@ -283,7 +421,7 @@
       
      data(){
       return{
-      
+          views:[],  
           form:{
           name: null,
           kp_passport: null,
@@ -323,7 +461,7 @@
             href: '/'
           },
           {
-            text: 'Pengguna',
+            text: 'Pesakit',
             active: true
           },
         ],
@@ -416,13 +554,13 @@
         
       },
        toggleModal(id) {
-         axios.get('/api/user/'+id)
+         axios.get('/api/patient/'+id)
   	    .then(({data}) => (this.forms = data))
         this.$refs['edit-modal'].toggle('#toggle-btn')
        
       },
       toggleModal2(id) {
-         axios.get('/api/user/'+id)
+         axios.get('/api/patient/'+id)
   	    .then(({data}) => (this.formr = data))
         this.$refs['reset-modal'].toggle('#toggle-btnreset')
        
@@ -442,12 +580,12 @@
             })
           )
         },
-      userUpdate(){
+      patientUpdate(){
        let id = this.forms.id
-       axios.patch('/api/user/'+id, this.forms)
+       axios.patch('/api/patient/'+id, this.forms)
        .then(() => {    
          let self = this;
-        axios.get('/api/user/')
+        axios.get('/api/patient/')
        .then(function (response) {
         self.items = response.data;
         })
@@ -458,21 +596,18 @@
        .catch(error =>this.errors = error.response.data.errors)
        
      },
-       ResetUser(){
-       let id = this.formr.id
-       axios.post('/api/password/update/'+id, this.formr)
-       .then(() => {
 
-        this.$refs['reset-modal'].hide()
-        Notification.success()
-       })
-       .catch(error =>this.errors = error.response.data.errors)
-       
-     },
+         viewModal(record) {
+          let self = this;
+            axios.get('/api/patient/'+record.id)
+  	     .then(function (response) {
+        self.views = response.data;
+        })
+        this.$refs['view-modal'].toggle('#toggle-btn')
    
   },
 
-
+ },
   }   
 </script>
 
