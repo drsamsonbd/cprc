@@ -437,16 +437,16 @@
     if(roles.includes("admin")){
       $("#admin").css("display","");  
       $("#items").css("display",""); 
-      $("#finance").css("display",""); 
-      $("#stock").css("display",""); 
+      $("#patient").css("display",""); 
+      $("#settings").css("display",""); 
     }
-    else if(roles.includes("user")){
+    else if(roles.includes("kesihatan")){
       $("#patient").css("display",""); 
       $("#settings").css("display",""); 
     }  
-    else if(roles.includes("finance")){
-   
-   $("#finance").css("display",""); 
+    else if(roles.includes("hospital")){
+      $("#patient").css("display",""); 
+      $("#settings").css("display",""); 
  
  }  
 
