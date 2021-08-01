@@ -53,6 +53,7 @@
                        <option >Bersasar</option>               
                         <option >Kontak</option>
                         <option >Komuniti</option>
+                        <option >Kluster</option>
                         <option >Masuk Kerja</option>
                         <option >BID</option>
                         </select>
@@ -184,6 +185,7 @@
                        <option >Bersasar</option>               
                         <option >Kontak</option>
                         <option >Komuniti</option>
+                        <option >Kluster</option>
                         <option >Masuk Kerja</option>
                         <option >BID</option>
                         </select>
