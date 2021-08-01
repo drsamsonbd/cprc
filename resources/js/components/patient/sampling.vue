@@ -576,11 +576,8 @@
           notes: null,
       
         },
-        formr:{
+      
        
-          icno: null,
-         
-        },
         errors:{},     
         
         itemize: [
