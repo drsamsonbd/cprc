@@ -57,7 +57,7 @@
         </div>
       </li>
       <!--Finance Management-->
-      <li id="finance" class="nav-item" style="display:none">
+      <li id="patient" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
           aria-expanded="true" aria-controls="collapseBootstrap2">
           <i class="fas fa-head-side-cough"></i></i>
@@ -74,7 +74,7 @@
       </li>
 
     <!--Stock Management-->  
-      <li id="stock" class="nav-item" style="display:none">
+      <li id="settings" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStock"
           aria-expanded="true" aria-controls="collapseStock">
           <i class="fas fa-cogs"></i>
@@ -440,9 +440,9 @@
       $("#finance").css("display",""); 
       $("#stock").css("display",""); 
     }
-    else if(roles.includes("head")){
-      $("#stock").css("display",""); 
-      $("#items").css("display",""); 
+    else if(roles.includes("user")){
+      $("#patient").css("display",""); 
+      $("#settings").css("display",""); 
     }  
     else if(roles.includes("finance")){
    

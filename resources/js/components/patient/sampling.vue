@@ -515,7 +515,7 @@
       
      mounted(){
      let roles = localStorage.getItem('roles');
-      if(roles.includes("admin")-1){
+      if(roles.includes("user")-1){
       this.$router.push({name: 'home'})
       Notification.unauthorized()
     }

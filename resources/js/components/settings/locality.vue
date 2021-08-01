@@ -217,7 +217,7 @@
    
     let $LoggedRoles = localStorage.getItem('roles');
    
-    if($LoggedRoles.toLowerCase().indexOf("head")===-1){
+    if($LoggedRoles.toLowerCase().indexOf("user")===-1){
       this.$router.push({name: 'home'})
       Notification.unauthorized()
       }
