@@ -111,7 +111,7 @@
         </div>
       </li>
         <!--Forms Management-->  
-        <li id="forms" class="nav-item" >
+        <li id="forms" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
           aria-expanded="true" aria-controls="collapseBootstrap4">
           <i class="fab fa-wpforms"></i>
