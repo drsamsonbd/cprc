@@ -29,7 +29,10 @@
                   </b-col>
                    <b-col>
                       <label>Jantina</label>
-                      <input type="text" class="form-control" id="gender" v-model="form.gender">
+                       <select class="form-control" id="gender" v-model="form.gender">                  
+                        <option >Lelaki</option>
+                        <option >Perempuan</option>
+                        </select>
                          <small class="text-danger" v-if="errors.gender">{{errors.gender[0]}}</small>
                     </b-col>
 
@@ -43,33 +46,46 @@
                   <b-row>
                   <b-col>
                       <label>Bangsa</label>
-                      <input type="text" class="form-control" id="race" v-model="form.race">
-                         <small class="text-danger" v-if="errors.race">{{errors.race[0]}}</small>
-                   </b-col>
+                 <select class="form-control" id="race" v-model="form.race">
+                        <option v-for="race in races" v-bind:key="race.race" >{{race.race }} </option>
+                        
+                        </select>
+                  </b-col>
                   <b-col>
                       <label>Warganegara</label>
-                      <input type="text" class="form-control" id="nationality" v-model="form.nationality">
-                         <small class="text-danger" v-if="errors.nationality">{{errors.nationality[0]}}</small>
+                      <select class="form-control" id="nationality" v-model="form.nationality">
+                        <option v-for="nationality in nationalities" v-bind:key="nationality.nationality" >{{nationality.nationality }} </option>
+                        
+                        </select>
                   </b-col>
                   </b-row>
 
                   <b-row>
                      <b-col>
                       <label>Mukim</label>
-                      <input type="text" class="form-control" id="area" v-model="form.area">
-                         <small class="text-danger" v-if="errors.area">{{errors.area[0]}}</small>
+                      <select class="form-control" id="area" v-model="form.area">
+                        <option v-for="area in areas" v-bind:key="area.area" >{{area.area }} </option>
+                        
+                        </select>
                    </b-col>
                     <b-col>
-                      <label>Daerah Daftar Kes</label>
-                      <input type="text" class="form-control" id="case_district" v-model="form.case_district">
-                         <small class="text-danger" v-if="errors.case_district">{{errors.case_district[0]}}</small>
+                      <label>Pekerjaan</label>
+                      <input type="text" class="form-control" id="job" v-model="form.job">
+                         <small class="text-danger" v-if="errors.job">{{errors.job[0]}}</small>
                     </b-col>
                     </b-row>
-                     <div class="form-group">
+                     <b-row>
+                      <b-col>
+                      <label>Alamat Tempat Kerja</label>
+                      <input type="text" class="form-control" id="workplace" v-model="form.workplace">
+                         <small class="text-danger" v-if="errors.workplace">{{errors.workplace[0]}}</small>
+                    </b-col>
+                       <b-col>
                       <label>No. Tel</label>
                       <input type="text" class="form-control" id="phone" v-model="form.phone">
                          <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
-                    </div>
+                    </b-col>
+                    </b-row>
                     <div class="form-group">
                       <label>Nota</label>
                       <textarea input type="text" class="form-control" id="notes" v-model="form.notes"></textarea>
@@ -87,7 +103,7 @@
   
   <!--userUpdate Modal-->
   <div>
-  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Pengguna">     
+  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Pesakit">     
           <form class="user" @submit.prevent="patientUpdate"> 
                     <div class="form-group" hidden>
                       <label>User ID:</label>
@@ -111,7 +127,10 @@
                   </b-col>
                    <b-col>
                       <label>Jantina</label>
-                      <input type="text" class="form-control" id="gender" v-model="forms.gender">
+                       <select class="form-control" id="gender" v-model="forms.gender">                  
+                        <option >Lelaki</option>
+                        <option >Perempuan</option>
+                        </select>
                          <small class="text-danger" v-if="errors.gender">{{errors.gender[0]}}</small>
                     </b-col>
 
@@ -125,33 +144,46 @@
                   <b-row>
                   <b-col>
                       <label>Bangsa</label>
-                      <input type="text" class="form-control" id="race" v-model="forms.race">
-                         <small class="text-danger" v-if="errors.race">{{errors.race[0]}}</small>
-                   </b-col>
+                 <select class="form-control" id="race" v-model="forms.race">
+                        <option v-for="race in races" v-bind:key="race.race" >{{race.race }} </option>
+                        
+                        </select>
+                  </b-col>
                   <b-col>
                       <label>Warganegara</label>
-                      <input type="text" class="form-control" id="nationality" v-model="forms.nationality">
-                         <small class="text-danger" v-if="errors.nationality">{{errors.nationality[0]}}</small>
+                      <select class="form-control" id="nationality" v-model="forms.nationality">
+                        <option v-for="nationality in nationalities" v-bind:key="nationality.nationality" >{{nationality.nationality }} </option>
+                        
+                        </select>
                   </b-col>
                   </b-row>
 
                   <b-row>
                      <b-col>
                       <label>Mukim</label>
-                      <input type="text" class="form-control" id="area" v-model="forms.area">
-                         <small class="text-danger" v-if="errors.area">{{errors.area[0]}}</small>
+                      <select class="form-control" id="area" v-model="forms.area">
+                        <option v-for="area in areas" v-bind:key="area.area" >{{area.area }} </option>
+                        
+                        </select>
                    </b-col>
                     <b-col>
-                      <label>Daerah Daftar Kes </label>
-                      <input type="text" class="form-control" id="case_district" v-model="forms.case_district">
-                         <small class="text-danger" v-if="errors.case_district">{{errors.case_district[0]}}</small>
+                      <label>Pekerjaan</label>
+                      <input type="text" class="form-control" id="job" v-model="forms.job">
+                         <small class="text-danger" v-if="errors.job">{{errors.job[0]}}</small>
                     </b-col>
                     </b-row>
-                     <div class="form-group">
+                     <b-row>
+                      <b-col>
+                      <label>Alamat Tempat Kerja</label>
+                      <input type="text" class="form-control" id="workplace" v-model="forms.workplace">
+                         <small class="text-danger" v-if="errors.workplace">{{errors.workplace[0]}}</small>
+                    </b-col>
+                       <b-col>
                       <label>No. Tel</label>
                       <input type="text" class="form-control" id="phone" v-model="forms.phone">
                          <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
-                    </div>
+                    </b-col>
+                    </b-row>
                     <div class="form-group">
                       <label>Nota</label>
                       <textarea input type="text" class="form-control" id="notes" v-model="forms.notes"></textarea>
@@ -172,7 +204,7 @@
   
   <!--viewModal-->
   <div>
-  <b-modal ref="view-modal" size="xl" hide-footer title="Kemaskini Pengguna">     
+  <b-modal ref="view-modal" size="xl" hide-footer title="Data Pesakit">     
           <form class="patient" > 
                     <div class="form-group" hidden>
                       <label>User ID:</label>
@@ -186,11 +218,7 @@
                       <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama mengikut kad pengenalan" v-model="views.name" disabled>
                      <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
                      </b-col>
-                     <b-col>
-                      <label>Nombor K/P atau Passport</label>
-                      <input type="text" class="form-control" id="ICnumber" v-model="views.kp_passport" disabled>
-                         <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
-                  </b-col>
+                 
                      </b-row>
                              
                     <b-row>
@@ -213,37 +241,29 @@
                     </b-row>
                   
                   <b-row>
-                  <b-col>
-                      <label>Bangsa</label>
-                      <input type="text" class="form-control" id="race" v-model="views.race" disabled>
-                         <small class="text-danger" v-if="errors.race">{{errors.race[0]}}</small>
-                   </b-col>
-                    <b-col>
+                     <b-col>
                       <label>Mukim</label>
                       <input type="text" class="form-control" id="area" v-model="views.area" disabled>
                          <small class="text-danger" v-if="errors.area">{{errors.area[0]}}</small>
                    </b-col>
-                  <b-col>
-                      <label>Warganegara</label>
-                      <input type="text" class="form-control" id="nationality" v-model="views.nationality" disabled>
-                         <small class="text-danger" v-if="errors.nationality">{{errors.nationality[0]}}</small>
-                  </b-col>
-                  </b-row>
-
-                  <b-row>
-                                       
                     <b-col>
-                      <label>Daerah Daftar Kes</label>
-                      <input type="text" class="form-control" id="case_district" v-model="views.case_district" disabled>
-                         <small class="text-danger" v-if="errors.case_district">{{errors.case_district[0]}}</small>
+                      <label>Pekerjaan</label>
+                      <input type="text" class="form-control" id="job" v-model="views.job" disabled>
+                         <small class="text-danger" v-if="errors.job">{{errors.job[0]}}</small>
                     </b-col>
-                    <b-col>
+                    </b-row>
+                     <b-row>
+                      <b-col>
+                      <label>Alamat Tempat Kerja</label>
+                      <input type="text" class="form-control" id="workplace" v-model="views.workplace" disabled>
+                         <small class="text-danger" v-if="errors.workplace">{{errors.workplace[0]}}</small>
+                    </b-col>
+                       <b-col>
                       <label>No. Tel</label>
                       <input type="text" class="form-control" id="phone" v-model="views.phone" disabled>
                          <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
                     </b-col>
                     </b-row>
-                     
                     <div class="form-group">
                       <label>Nota</label>
                       <textarea input type="text" class="form-control" id="notes" v-model="views.notes" disabled></textarea>
@@ -268,14 +288,12 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Senarai Pesakit</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Senarai Kes</h6>
                 </div>
 
 
 <b-row>
-   <b-col sm="1" class="my-1" align="right">
-           <b-button pill size="sm" variant="outline-secondary" id="show-btn" @click="showModal"> <i class="fas fa-plus"></i>&nbsp;Tambah</b-button>
-        </b-col>
+
         <b-col sm="6" class="my-1">
         <b-form-group
           label=""
@@ -338,7 +356,6 @@
       flex 
       striped 
       hover
-      @row-clicked="viewModal"
     >
      <template #cell(index)="data">
         {{ data.index + 1 }}
@@ -415,13 +432,18 @@
  
 
         this.allPatient();
- 
+        this.race();
+        this.area(),
+        this.nationality();
       },
 
       
      data(){
       return{
-          views:[],  
+          views:[], 
+          races: [],
+          nationalities:[],
+          areas:[], 
           form:{
           name: null,
           kp_passport: null,
@@ -430,6 +452,8 @@
           race: null,
           phone: null,
           nationality: null,
+          job: null,
+          workplace: null,
           area: null,
           case_district: null,
           notes: null,
@@ -443,6 +467,8 @@
           race: null,
           phone: null,
           nationality: null,
+          job: null,
+          workplace: null,
           area: null,
           case_district: null,
           notes: null,
@@ -467,12 +493,12 @@
         ],
           modalShow: false,
 
-        perPage: 20,
+        perPage: 5,
         currentPage: 1,
         pageOptions: [5, 10, 15, 25, { value: 100, text: "Show a lot" }],
-        sortBy: 'name',
-        sortDesc: false,
-        sortDirection: 'asc',
+        sortBy: 'cumulative',
+        sortDesc: true,
+        sortDirection: 'desc',
         filter: null,
         filterOn: [],
         items: [],
@@ -484,9 +510,29 @@
           { key: 'race', label: 'Bangsa', sortable: true, sortDirection: 'desc' },
           { key: 'nationality', label: 'WN', sortable: true, sortDirection: 'desc' },
           { key: 'area', label: 'Mukim', sortable: true, sortDirection: 'desc' },
-          { key: 'case_district', label: 'Daerah Kes', sortable: true, sortDirection: 'desc' },
           { key: 'phone', label: 'No. Tel', sortable: true, sortDirection: 'desc' },
           { key: 'notes', label: 'Nota', sortable: true, sortDirection: 'desc' },
+          { key: 'year', label: 'Tahun', sortable: true, sortDirection: 'desc' },
+          { key: 'epid_week', label: 'Minggu Epid', sortable: true, sortDirection: 'desc' },
+          { key: 'cumulative', label: 'Bil', sortable: true, sortDirection: 'desc' },
+          { key: 'date_report_KKM', label: 'Taikh Daftar KKM', sortable: true, sortDirection: 'desc' },
+          { key: 'district', label: 'Daerah Daftar', sortable: true, sortDirection: 'desc' },
+          { key: 'locality', label: 'Lokaliti', sortable: true, sortDirection: 'desc' },
+          { key: 'treating_hospital', label: 'Hospital Merawat', sortable: true, sortDirection: 'desc' },
+          { key: 'symptomatic', label: 'Simptomatik', sortable: true, sortDirection: 'desc' },
+          { key: 'onset', label: 'Onset', sortable: true, sortDirection: 'desc' },
+          { key: 'screening_type', label: 'Jenis Saringan', sortable: true, sortDirection: 'desc' },
+          { key: 'exposure_type', label: 'Jenis Exposure', sortable: true, sortDirection: 'desc' },
+          { key: 'reinfection', label: 'Reinfection?', sortable: true, sortDirection: 'desc' },
+          { key: 'date_sample', label: 'Tarikh Sample', sortable: true, sortDirection: 'desc' },
+          { key: 'type_sample', label: 'Jenis', sortable: true, sortDirection: 'desc' },
+          { key: 'date_mka', label: 'Takih MKA', sortable: true, sortDirection: 'desc' },
+          { key: 'grading', label: 'Grading', sortable: true, sortDirection: 'desc' },
+          { key: 'date_result', label: 'Tarikh Keputusan', sortable: true, sortDirection: 'desc' },
+          { key: 'vaccine_type', label: 'Jenis Vaksin', sortable: true, sortDirection: 'desc' },
+          { key: 'first_dose_date', label: '1st Dose', sortable: true, sortDirection: 'desc' },
+          { key: 'second_dose_date', label: '2nd Dose', sortable: true, sortDirection: 'desc' },
+          { key: 'notes', label: 'Status Saringan/ Kontak', sortable: true, sortDirection: 'desc' },
           { key: 'actions', label: 'Actions' },
         ],
         table:'',
@@ -497,12 +543,22 @@
 
 
 
+    },   
+     computed:{
+      filtersearch(){
+      return this.users.filter(user => {
+         return user.name.match(this.searchTerm)
+      }) 
+      },
+      rows() {
+        return this.items.length
+      }
     },
  
   methods:{
       allPatient(){
     let self = this;
-     axios.get('/api/patient/')
+     axios.get('/api/caselist/')
       .then(function (response) {
         self.items = response.data;
       }).catch(function (error) {
@@ -510,7 +566,36 @@
         self.$router.push({ path: '/login' });
       });
     },
-
+     race(){
+    let self = this;
+     axios.get('/api/race/')
+      .then(function (response) {
+        self.races = response.data;
+      }).catch(function (error) {
+        console.log(error);
+        self.$router.push({ path: '/login' });
+      });
+    },
+       area(){
+    let self = this;
+     axios.get('/api/area/')
+      .then(function (response) {
+        self.areas = response.data;
+      }).catch(function (error) {
+        console.log(error);
+        self.$router.push({ path: '/login' });
+      });
+    },
+       nationality(){
+    let self = this;
+     axios.get('/api/nationality/')
+      .then(function (response) {
+        self.nationalities = response.data;
+      }).catch(function (error) {
+        console.log(error);
+        self.$router.push({ path: '/login' });
+      });
+    },
 
       deleteUser(id){
                 Swal.fire({
@@ -523,12 +608,10 @@
                   confirmButtonText: 'Teruskan'
                 }).then((result) => {
                   if (result.value) {
-                    axios.delete('/api/user/'+id)
+                    axios.delete('/api/patient/'+id)
                   .then(() => {
                     window.location.reload()
-                    this.users = this.users.filter(user => {
-                      return user.id != id
-                    })
+                
                   })
                   .catch(() => {
                   

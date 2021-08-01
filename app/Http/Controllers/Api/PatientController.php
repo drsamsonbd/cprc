@@ -42,11 +42,12 @@ class PatientController extends Controller
             'kp_passport'=>'required|unique:patients',
             'age'=>'required',
             'gender'=>'required',
-            'race'=>'required',
-            'phone'=>'required',
+            'race'=>'',
+            'phone'=>'',
             'nationality'=>'required',
+            'job'=>'',
+            'workplace'=>'',
             'area'=>'required',
-            'case_district'=>'required',
             'notes'=>'',
 
         ]);
@@ -57,9 +58,10 @@ class PatientController extends Controller
         $patient->gender = $request->gender;
         $patient->race = $request->race;
         $patient->phone = $request->phone;
-        $patient->nationality = $request->nationality;
+        $patient->nationality = $request->job;
+        $patient->workplace = $request->workplace;
+        $patient->job = $request->nationality;
         $patient->area = $request->area;
-        $patient->case_district = $request->case_district;
         $patient->notes = $request->notes;
         $patient->save();
     }
@@ -104,8 +106,9 @@ class PatientController extends Controller
         $data['race'] = $request->race;
         $data['phone'] = $request->phone;
         $data['nationality'] = $request->nationality;
+        $data['job'] = $request->job;
+        $data['workplace'] = $request->workplace;
         $data['area'] = $request->area;
-        $data['case_district'] = $request->case_district;
         $data['notes'] = $request->notes;
         DB::table('patients')->where('id',$id)->update($data);
     }

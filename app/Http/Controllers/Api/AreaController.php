@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Api;
+use App\Http\Controllers\Controller;
 use App\Models\area;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AreaController extends Controller
 {
@@ -14,7 +15,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $area = Area::all();      
+        return response()->json($area);
     }
 
     /**
@@ -35,7 +37,12 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'area'=>'required|unique:areas|min:3'
+        ]);
+        $area = new Area;
+        $area->area = $request->area;
+        $area->save();
     }
 
     /**
@@ -44,9 +51,10 @@ class AreaController extends Controller
      * @param  \App\Models\area  $area
      * @return \Illuminate\Http\Response
      */
-    public function show(area $area)
+    public function show($id)
     {
-        //
+        $area = DB::table('areas')->where('id',$id)->first();
+        return response()->json($area);
     }
 
     /**
@@ -67,9 +75,11 @@ class AreaController extends Controller
      * @param  \App\Models\area  $area
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, area $area)
+    public function update(Request $request, $id)
     {
-        //
+        $data = array();
+        $data['area'] = $request->area;
+        DB::table('areas')->where('id',$id)->update($data);
     }
 
     /**
@@ -78,8 +88,8 @@ class AreaController extends Controller
      * @param  \App\Models\area  $area
      * @return \Illuminate\Http\Response
      */
-    public function destroy(area $area)
+    public function destroy($id)
     {
-        //
+        DB::table('areas')->where('id',$id)->delete();
     }
 }

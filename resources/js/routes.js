@@ -10,12 +10,22 @@ let user= require('./components/admin/user.vue').default;
 let department= require('./components/admin/department.vue').default;
 
  // Patient Component 
- let patient = require('./components/patient/index.vue').default;
- let supplier = require('./components/supplier/index.vue').default;
- let editsupplier = require('./components/supplier/edit.vue').default;
+ let caselist = require('./components/patient/index.vue').default;
+ let patient = require('./components/patient/patient.vue').default;
+ let case_reg = require('./components/patient/case.vue').default;
+ let sampling = require('./components/patient/sampling.vue').default;
 
-//Category component
-let category= require('./components/category/index.vue').default;
+//settings component
+let race= require('./components/settings/race.vue').default;
+let area= require('./components/settings/area.vue').default;
+let district= require('./components/settings/district.vue').default;
+let nationality= require('./components/settings/nationality.vue').default;
+let locality= require('./components/settings/locality.vue').default;
+let hospital= require('./components/settings/hospital.vue').default;
+let pkrc= require('./components/settings/pkrc.vue').default;
+let vaccine= require('./components/settings/vaccine.vue').default;
+
+
 //product component
 let storeproduct= require('./components/product/create.vue').default;
 let product= require('./components/product/index.vue').default;
@@ -48,13 +58,23 @@ export const routes = [
     // Admin Routes
     { path: '/user', component: user, name:'user' },
     { path: '/department', component: department, name:'department' },
-    // Category
-    { path: '/category', component: category, name:'category' },
+    // settings
+    { path: '/race', component:race , name:'race' },
+    { path: '/area', component:area , name:'area' },
+    { path: '/district', component:district , name:'district' },
+    { path: '/nationality', component: nationality, name:'nationality' },
+    { path: '/locality', component: locality, name:'locality' },
+    { path: '/hospital', component: hospital, name:'hospital' },
+    { path: '/pkrc', component: pkrc, name:'pkrc' },
+    { path: '/vaccine', component: vaccine, name:'vaccine' },
+
+
 
       // patient Routes
+  { path: '/caselist', component: caselist, name:'caselist'},
   { path: '/patient', component: patient, name:'patient'},
-  { path: '/supplier', component: supplier, name:'supplier'},
-  { path: '/edit-supplier/:id', component: editsupplier, name:'edit-supplier'},
+  { path: '/case', component: case_reg, name:'case'},
+  { path: '/sampling', component: sampling, name:'sampling'},
 
     //product routes
     { path: '/product', component: product, name:'product' },

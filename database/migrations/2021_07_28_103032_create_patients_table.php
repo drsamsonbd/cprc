@@ -22,8 +22,9 @@ class CreatePatientsTable extends Migration
             $table->string('race');
             $table->string('phone');
             $table->string('nationality');
-            $table->string('area');
-            $table->string('case_district');           
+            $table->string('job');
+            $table->string('workplace');
+            $table->string('area');     
             $table->string('notes');
             $table->timestamps();
         });

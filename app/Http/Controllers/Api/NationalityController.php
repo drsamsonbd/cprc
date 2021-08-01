@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Api;
+use App\Http\Controllers\Controller;
 use App\Models\nationality;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class NationalityController extends Controller
+class nationalityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class NationalityController extends Controller
      */
     public function index()
     {
-        //
+        $nationality = nationality::all();      
+        return response()->json($nationality);
     }
 
     /**
@@ -35,7 +37,12 @@ class NationalityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'nationality'=>'required|unique:nationalities|min:3'
+        ]);
+        $nationality = new nationality;
+        $nationality->nationality = $request->nationality;
+        $nationality->save();
     }
 
     /**
@@ -44,9 +51,10 @@ class NationalityController extends Controller
      * @param  \App\Models\nationality  $nationality
      * @return \Illuminate\Http\Response
      */
-    public function show(nationality $nationality)
+    public function show($id)
     {
-        //
+        $nationality = DB::table('nationalities')->where('id',$id)->first();
+        return response()->json($nationality);
     }
 
     /**
@@ -67,9 +75,11 @@ class NationalityController extends Controller
      * @param  \App\Models\nationality  $nationality
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, nationality $nationality)
+    public function update(Request $request, $id)
     {
-        //
+        $data = array();
+        $data['nationality'] = $request->nationality;
+        DB::table('nationalities')->where('id',$id)->update($data);
     }
 
     /**
@@ -78,8 +88,8 @@ class NationalityController extends Controller
      * @param  \App\Models\nationality  $nationality
      * @return \Illuminate\Http\Response
      */
-    public function destroy(nationality $nationality)
+    public function destroy($id)
     {
-        //
+        DB::table('nationalities')->where('id',$id)->delete();
     }
 }

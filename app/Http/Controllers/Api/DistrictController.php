@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Api;
+use App\Http\Controllers\Controller;
 use App\Models\district;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class DistrictController extends Controller
+class districtController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        //
+        $district = district::all();      
+        return response()->json($district);
     }
 
     /**
@@ -35,7 +37,12 @@ class DistrictController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'district'=>'required|unique:districts|min:3'
+        ]);
+        $district = new district;
+        $district->district = $request->district;
+        $district->save();
     }
 
     /**
@@ -44,9 +51,10 @@ class DistrictController extends Controller
      * @param  \App\Models\district  $district
      * @return \Illuminate\Http\Response
      */
-    public function show(district $district)
+    public function show($id)
     {
-        //
+        $district = DB::table('districts')->where('id',$id)->first();
+        return response()->json($district);
     }
 
     /**
@@ -67,9 +75,11 @@ class DistrictController extends Controller
      * @param  \App\Models\district  $district
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, district $district)
+    public function update(Request $request, $id)
     {
-        //
+        $data = array();
+        $data['district'] = $request->district;
+        DB::table('districts')->where('id',$id)->update($data);
     }
 
     /**
@@ -78,8 +88,8 @@ class DistrictController extends Controller
      * @param  \App\Models\district  $district
      * @return \Illuminate\Http\Response
      */
-    public function destroy(district $district)
+    public function destroy($id)
     {
-        //
+        DB::table('districts')->where('id',$id)->delete();
     }
 }

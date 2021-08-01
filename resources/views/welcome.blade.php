@@ -65,9 +65,10 @@
         </a>
         <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-           
-            <router-link class="collapse-item" to="/patient">Senarai</router-link>
-            <router-link class="collapse-item" to="/code">Kod Peruntukan</router-link>
+          <router-link class="collapse-item" to="/caselist">Senarai Kes</router-link>
+            <router-link class="collapse-item" to="/patient">Daftar Pesakit</router-link>
+            <router-link class="collapse-item" to="/case">Daftar Kes</router-link>
+            <router-link class="collapse-item" to="/sampling">Rekod Ujian</router-link>
           </div>
         </div>
       </li>
@@ -82,10 +83,14 @@
         <div id="collapseStock" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
            
-            <router-link class="collapse-item" to="/stock/out">Pengeluaran</router-link>
-          <router-link class="collapse-item" to="/category">Penerimaan</router-link>
-           <router-link class="collapse-item" to="/category">Pembelian</router-link>
-            <router-link class="collapse-item" to="/stock-setting">Tetapan</router-link>
+            <router-link class="collapse-item" to="/race">Bangsa</router-link>
+          <router-link class="collapse-item" to="/area">Mukim</router-link>
+           <router-link class="collapse-item" to="/district">Daerah</router-link>
+            <router-link class="collapse-item" to="/nationality">Warganegara</router-link>
+            <router-link class="collapse-item" to="/locality">Lokaliti</router-link>            
+            <router-link class="collapse-item" to="/hospital">Hospital</router-link>            
+            <router-link class="collapse-item" to="/pkrc">PKRC</router-link>
+            <router-link class="collapse-item" to="/vaccine">Vaksin</router-link>
           </div>
         </div>
       </li>

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Api;
+use App\Http\Controllers\Controller;
 use App\Models\race;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RaceController extends Controller
 {
@@ -14,7 +15,8 @@ class RaceController extends Controller
      */
     public function index()
     {
-        //
+        $race = Race::all();      
+        return response()->json($race);
     }
 
     /**
@@ -35,7 +37,12 @@ class RaceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'race'=>'required|unique:races|min:3'
+        ]);
+        $race = new Race;
+        $race->race = $request->race;
+        $race->save();
     }
 
     /**
@@ -44,9 +51,10 @@ class RaceController extends Controller
      * @param  \App\Models\race  $race
      * @return \Illuminate\Http\Response
      */
-    public function show(race $race)
+    public function show($id)
     {
-        //
+        $race = DB::table('races')->where('id',$id)->first();
+        return response()->json($race);
     }
 
     /**
@@ -67,9 +75,11 @@ class RaceController extends Controller
      * @param  \App\Models\race  $race
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, race $race)
+    public function update(Request $request, $id)
     {
-        //
+        $data = array();
+        $data['race'] = $request->race;
+        DB::table('races')->where('id',$id)->update($data);
     }
 
     /**
@@ -78,8 +88,8 @@ class RaceController extends Controller
      * @param  \App\Models\race  $race
      * @return \Illuminate\Http\Response
      */
-    public function destroy(race $race)
+    public function destroy($id)
     {
-        //
+        DB::table('races')->where('id',$id)->delete();
     }
 }
