@@ -485,7 +485,7 @@
         filterOn: [],
         items: [],
         fields: [
-          { key: 'id', label: 'ID', sortable: true, sortDirection: 'asc' },
+       
           { key: 'name', label: 'Nama', sortable: true, sortDirection: 'asc' },
           { key: 'kp_passport', label: 'No. Kad Pengenalan/Passport', sortable: true, sortDirection: 'desc' },
           { key: 'year', label: 'Tahun', sortable: true, sortDirection: 'desc' },
