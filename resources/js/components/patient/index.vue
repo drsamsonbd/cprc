@@ -86,11 +86,168 @@
                          <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
                     </b-col>
                     </b-row>
-                    <div class="form-group">
-                      <label>Nota</label>
-                      <textarea input type="text" class="form-control" id="notes" v-model="form.notes"></textarea>
-                         <small class="text-danger" v-if="errors.notes">{{errors.notes[0]}}</small>
-                    </div>
+                                               
+                    <b-row>
+                  
+                   <b-col>
+                      <label>Tahun</label>
+                        <select class="form-control" id="name" v-model="forms.year">                  
+                        <option >2021</option>
+                        <option >2020</option>
+                        </select>
+                    </b-col>
+
+                     <b-col>
+                      <label>Minggu Epid</label>
+                      <input type="text" class="form-control" id="epid" v-model="form.epid_week">
+                         <small class="text-danger" v-if="errors.epid_week">{{errors.epid_week[0]}}</small>
+                    </b-col>
+                    </b-row>
+                  
+                  <b-row>
+                  <b-col>
+                      <label>Bilangan Kumulatif</label>
+                      <input type="text" class="form-control" id="cumulative" v-model="form.cumulative">
+                         <small class="text-danger" v-if="errors.cumulative">{{errors.cumulative[0]}}</small>
+                   </b-col>
+                  <b-col>
+                      <label>Tarikh Daftar Kes</label>
+                      <input type="date" class="form-control" id="date_report" v-model="forms.date_report_KKM">
+                         <small class="text-danger" v-if="errors.date_report_KKM">{{errors.date_report_KKM[0]}}</small>
+                  </b-col>
+                  </b-row>
+
+                  <b-row>
+                     <b-col>
+                      <label>Bilangan Kes</label>
+                      <input type="text" class="form-control" id="daily_number" v-model="form.daily_number">
+                         <small class="text-danger" v-if="errors.daily_number">{{errors.daily_number[0]}}</small>
+                   </b-col>
+                    <b-col>
+                      <label>Daerah Daftar Kes</label>
+                        <select class="form-control" id="district" v-model="form.district">
+                        <option v-for="district in districts" v-bind:key="district.district" >{{district.district }} </option>
+                        
+                        </select>
+                    </b-col>
+                    </b-row>
+                      <b-row>
+                     <b-col>
+                      <label>Lokaliti</label>
+                       <select class="form-control" id="locality" v-model="form.locality">
+                        <option v-for="locality in localities" v-bind:key="locality.locality" >{{locality.locality }} </option>
+                        
+                        </select>
+                   </b-col>
+                    <b-col>
+                      <label>Hospital Merawat</label>
+                     <select class="form-control" id="hospital" v-model="form.treating_hospital">
+                        <option v-for="hospital in hospitals" v-bind:key="hospital.hospital" >{{hospital.hospital }} </option>
+                        
+                        </select>
+                    </b-col>
+                    </b-row>
+                        <b-row>
+                      
+                   <b-col>
+           
+                      <label>Simptomatik</label>
+                        <select class="form-control" id="name" v-model="form.symptomatic">                  
+                        <option >Ya</option>
+                        <option >Tidak</option>
+                        </select>
+                    </b-col>
+
+                     <b-col>
+                      <label>Onset</label>
+                      <input type="date" class="form-control" id="epid" v-model="form.onset">
+                    </b-col>
+                    </b-row>
+                  
+                  <b-row>
+                  <b-col>
+                      <label>Jenis Saringan</label>
+                     <select class="form-control" id="screening" v-model="form.screening_type"> 
+                       <option >Bergejala</option>  
+                       <option >Bersasar</option>               
+                        <option >Kontak</option>
+                        <option >Komuniti</option>
+                        <option >Kluster</option>
+                        <option >Masuk Kerja</option>
+                        <option >BID</option>
+                        </select>
+                         <small class="text-danger" v-if="errors.screening_type">{{errors.screening_type[0]}}</small>
+                   </b-col>
+                   <b-col>
+                        <label>Jenis Exposure</label>
+                     <select class="form-control" id="exposure" v-model="form.exposure_type"> 
+                       <option >Tempatan</option>  
+                       <option >Import A</option>               
+                        <option >Import B</option>
+                        <option >Import C</option>
+                       
+                        </select>
+                         <small class="text-danger" v-if="errors.exposure_type">{{errors.exposure_type[0]}}</small>
+                   </b-col>
+                  <b-col>
+                      <label>Reinfection?</label>
+                       <select class="form-control" id="reinfection" v-model="form.reinfection"> 
+                       <option >Ya</option>  
+                       <option >Tidak</option>    
+                       
+                        </select>
+                  </b-col>
+                  </b-row>
+
+                  <b-row>
+                     <b-col>
+                      <label>Tarikh Sampel</label>
+                      <input type="date" class="form-control" id="datesample" v-model="form.date_sample">
+                         <small class="text-danger" v-if="errors.date_sample">{{errors.date_sample[0]}}</small>
+                   </b-col>
+                     <b-col>
+                      <label>Jenis Sampel</label>
+                       <select class="form-control" id="reinfection" v-model="form.type_sample"> 
+                       <option >PCR</option>  
+                       <option >RTK-Ag</option>    
+                       <small class="text-danger" v-if="errors.type_sample">{{errors.type_sample[0]}}</small>
+                        </select>
+                  </b-col>
+                      <b-col>
+                      <label>Tarikh Sampel di MKA</label>
+                      <input type="date" class="form-control" id="datemka" v-model="form.date_mka">
+                   </b-col>
+                    </b-row>
+                      <b-row>
+                     <b-col>
+                      <label>Grading</label>
+                      <input type="text" class="form-control" id="grading" v-model="form.grading">
+                         <small class="text-danger" v-if="errors.grading">{{errors.grading[0]}}</small>
+                   </b-col>
+                    <b-col>
+                      <label>Tarikh Keputusan</label>
+                     <input type="date" class="form-control" id="dateresult" v-model="form.date_result">
+                         <small class="text-danger" v-if="errors.date_result">{{errors.date_result[0]}}</small>
+                    </b-col>
+                    </b-row>
+                            <b-row>
+                     <b-col>
+                      <label>Vaksinasi</label>
+                          <select class="form-control" id="vaccine" v-model="form.vaccine_type">
+                        <option v-for="vaccine in vaccines" v-bind:key="vaccine.vaccine" > {{vaccine.vaccine }}</option>
+                        
+                        </select>
+                   </b-col>
+                    <b-col>
+                      <label>Tarikh 1st Dose</label>
+                     <input type="date" class="form-control" id="1stdose" v-model="form.first_dose_date">
+                    </b-col>
+                     <b-col>
+                      <label>Tarikh 2nd Dose</label>
+                     <input type="date" class="form-control" id="2nddose" v-model="form.second_dose_date">
+                    </b-col>
+                    </b-row>
+                    <br>
                     <div class="form-group">
                       <button type="submit"  class="btn btn-primary btn-block">Daftar</button>
                     </div>
@@ -101,185 +258,7 @@
           
       </b-modal>
   
-  <!--userUpdate Modal-->
-  <div>
-  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Pesakit">     
-          <form class="user" @submit.prevent="patientUpdate"> 
-                    <div class="form-group" hidden>
-                      <label>User ID:</label>
-                      <input type="hidden" class="form-control" id="exampleInputID" placeholder="ID" v-model="forms.id">
-                     
-                    </div>  
-                 
-                      <b-row>
-                        <b-col>
-                      <label>Nama</label>
-                      <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama mengikut kad pengenalan" v-model="forms.name">
-                     <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
-                     </b-col>
-                     </b-row>
-                             
-                    <b-row>
-                      <b-col>
-                      <label>Nombor K/P atau Passport</label>
-                      <input type="text" class="form-control" id="ICnumber" v-model="forms.kp_passport">
-                         <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
-                  </b-col>
-                   <b-col>
-                      <label>Jantina</label>
-                       <select class="form-control" id="gender" v-model="forms.gender">                  
-                        <option >Lelaki</option>
-                        <option >Perempuan</option>
-                        </select>
-                         <small class="text-danger" v-if="errors.gender">{{errors.gender[0]}}</small>
-                    </b-col>
-
-                     <b-col>
-                      <label>Umur</label>
-                      <input type="text" class="form-control" id="age" v-model="forms.age">
-                         <small class="text-danger" v-if="errors.age">{{errors.age[0]}}</small>
-                    </b-col>
-                    </b-row>
-                  
-                  <b-row>
-                  <b-col>
-                      <label>Bangsa</label>
-                 <select class="form-control" id="race" v-model="forms.race">
-                        <option v-for="race in races" v-bind:key="race.race" >{{race.race }} </option>
-                        
-                        </select>
-                  </b-col>
-                  <b-col>
-                      <label>Warganegara</label>
-                      <select class="form-control" id="nationality" v-model="forms.nationality">
-                        <option v-for="nationality in nationalities" v-bind:key="nationality.nationality" >{{nationality.nationality }} </option>
-                        
-                        </select>
-                  </b-col>
-                  </b-row>
-
-                  <b-row>
-                     <b-col>
-                      <label>Mukim</label>
-                      <select class="form-control" id="area" v-model="forms.area">
-                        <option v-for="area in areas" v-bind:key="area.area" >{{area.area }} </option>
-                        
-                        </select>
-                   </b-col>
-                    <b-col>
-                      <label>Pekerjaan</label>
-                      <input type="text" class="form-control" id="job" v-model="forms.job">
-                         <small class="text-danger" v-if="errors.job">{{errors.job[0]}}</small>
-                    </b-col>
-                    </b-row>
-                     <b-row>
-                      <b-col>
-                      <label>Alamat Tempat Kerja</label>
-                      <input type="text" class="form-control" id="workplace" v-model="forms.workplace">
-                         <small class="text-danger" v-if="errors.workplace">{{errors.workplace[0]}}</small>
-                    </b-col>
-                       <b-col>
-                      <label>No. Tel</label>
-                      <input type="text" class="form-control" id="phone" v-model="forms.phone">
-                         <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
-                    </b-col>
-                    </b-row>
-                    <div class="form-group">
-                      <label>Nota</label>
-                      <textarea input type="text" class="form-control" id="notes" v-model="forms.notes"></textarea>
-                         <small class="text-danger" v-if="errors.notes">{{errors.notes[0]}}</small>
-                    </div>
-                      
-                     
-                    
-                    <div class="form-group">
-                      <button type="submit" id="myBtn" class="btn btn-primary btn-block" @click="patientUpdate(patient.id)">Kemaskini</button>
-               
-                    </div>
-               
-                  </form> 
-   </b-modal>
-   </div>
-<!--userUpdate Modal-->
-  
-  <!--viewModal-->
-  <div>
-  <b-modal ref="view-modal" size="xl" hide-footer title="Data Pesakit">     
-          <form class="patient" > 
-                    <div class="form-group" hidden>
-                      <label>User ID:</label>
-                      <input type="hidden" class="form-control" id="exampleInputID" placeholder="ID" v-model="views.id">
-                     
-                    </div>  
-                 
-                      <b-row>
-                        <b-col>
-                      <label>Nama</label>
-                      <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama mengikut kad pengenalan" v-model="views.name" disabled>
-                     <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
-                     </b-col>
-                 
-                     </b-row>
-                             
-                    <b-row>
-                      <b-col>
-                      <label>Nombor K/P atau Passport</label>
-                      <input type="text" class="form-control" id="ICnumber" v-model="views.kp_passport" disabled>
-                         <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
-                  </b-col>
-                   <b-col>
-                      <label>Jantina</label>
-                      <input type="text" class="form-control" id="gender" v-model="views.gender" disabled>
-                         <small class="text-danger" v-if="errors.gender">{{errors.gender[0]}}</small>
-                    </b-col>
-
-                     <b-col>
-                      <label>Umur</label>
-                      <input type="text" class="form-control" id="age" v-model="views.age" disabled>
-                         <small class="text-danger" v-if="errors.age">{{errors.age[0]}}</small>
-                    </b-col>
-                    </b-row>
-                  
-                  <b-row>
-                     <b-col>
-                      <label>Mukim</label>
-                      <input type="text" class="form-control" id="area" v-model="views.area" disabled>
-                         <small class="text-danger" v-if="errors.area">{{errors.area[0]}}</small>
-                   </b-col>
-                    <b-col>
-                      <label>Pekerjaan</label>
-                      <input type="text" class="form-control" id="job" v-model="views.job" disabled>
-                         <small class="text-danger" v-if="errors.job">{{errors.job[0]}}</small>
-                    </b-col>
-                    </b-row>
-                     <b-row>
-                      <b-col>
-                      <label>Alamat Tempat Kerja</label>
-                      <input type="text" class="form-control" id="workplace" v-model="views.workplace" disabled>
-                         <small class="text-danger" v-if="errors.workplace">{{errors.workplace[0]}}</small>
-                    </b-col>
-                       <b-col>
-                      <label>No. Tel</label>
-                      <input type="text" class="form-control" id="phone" v-model="views.phone" disabled>
-                         <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
-                    </b-col>
-                    </b-row>
-                    <div class="form-group">
-                      <label>Nota</label>
-                      <textarea input type="text" class="form-control" id="notes" v-model="views.notes" disabled></textarea>
-                         <small class="text-danger" v-if="errors.notes">{{errors.notes[0]}}</small>
-                    </div>
-                      
-                     
-                    
-                
-               
-                  </form> 
-   </b-modal>
-   </div>
-<!--viewModal-->
-
-
+ 
  </div>
  </div>
 
@@ -293,7 +272,9 @@
 
 
 <b-row>
-
+ <b-col sm="1" class="my-1" align="right">
+           <b-button pill size="sm" variant="outline-secondary" id="show-btn" @click="showModal"> <i class="fas fa-plus"></i>&nbsp;Tambah</b-button>
+        </b-col>
         <b-col sm="6" class="my-1">
         <b-form-group
           label=""
@@ -435,6 +416,10 @@
         this.race();
         this.area(),
         this.nationality();
+        this.district();
+        this.hospital();
+        this.locality();
+         this.vaccine();
       },
 
       
@@ -444,6 +429,12 @@
           races: [],
           nationalities:[],
           areas:[], 
+          districts:[],
+          localities:[],
+          hospitals:[],
+             vaccines:[],
+
+
           form:{
           name: null,
           kp_passport: null,
@@ -456,29 +447,63 @@
           workplace: null,
           area: null,
           case_district: null,
-          notes: null,
+          kp_passport: null,
+          year: null,
+          epid_week: null,
+          cumulative: null,
+          date_report_KKM: null,
+          daily_report: null,
+          district: null,
+          locality: null,
+          treating_hospital: null,
+          kp_passport: null,
+          sypmtomatic: null,
+          onset: null,
+          screening_type: null,
+          exposure_type: null,
+          reinfection: null,
+          date_sample: null,
+          type_sample: null,
+          date_mka: null,
+          grading: null,
+          date_result: null,
+          vaccine_type: null,
+          first_dose_date:null,
+          second_dose_date: null,
+          notes: null, 
           
         },
           forms:{
-          name: null,
           kp_passport: null,
-          age: null,
-          gender: null,          
-          race: null,
-          phone: null,
-          nationality: null,
-          job: null,
-          workplace: null,
-          area: null,
-          case_district: null,
-          notes: null,
+          year: null,
+          epid_week: null,
+          cumulative: null,
+          date_report_KKM: null,
+          daily_report: null,
+          district: null,
+          locality: null,
+          treating_hospital: null,
       
         },
-        formr:{
-       
-          icno: null,
+          formr:{         
+          kp_passport: null,
+          sypmtomatic: null,
+          onset: null,
+          screening_type: null,
+          exposure_type: null,
+          reinfection: null,
+          date_sample: null,
+          type_sample: null,
+          date_mka: null,
+          grading: null,
+          date_result: null,
+          vaccine_type: null,
+          first_dose_date:null,
+          second_dose_date: null,
+          notes: null,        
          
         },
+
         errors:{},     
         
         itemize: [
@@ -596,7 +621,46 @@
         self.$router.push({ path: '/login' });
       });
     },
-
+        district(){
+    let self = this;
+     axios.get('/api/district/')
+      .then(function (response) {
+        self.districts = response.data;
+      }).catch(function (error) {
+        console.log(error);
+        self.$router.push({ path: '/login' });
+      });
+    },
+   locality(){
+    let self = this;
+     axios.get('/api/locality/')
+      .then(function (response) {
+        self.localities = response.data;
+      }).catch(function (error) {
+        console.log(error);
+        self.$router.push({ path: '/login' });
+      });
+    },
+     hospital(){
+    let self = this;
+     axios.get('/api/hospital/')
+      .then(function (response) {
+        self.hospitals = response.data;
+      }).catch(function (error) {
+        console.log(error);
+        self.$router.push({ path: '/login' });
+      });
+    },
+    vaccine(){
+    let self = this;
+     axios.get('/api/vaccine/')
+      .then(function (response) {
+        self.vaccines = response.data;
+      }).catch(function (error) {
+        console.log(error);
+        self.$router.push({ path: '/login' });
+      });
+    },
       deleteUser(id){
                 Swal.fire({
                   title: 'Anda pasti?',
@@ -651,6 +715,8 @@
    
        register(){
           axios.post('/api/patient', this.form)
+            axios.post('/api/case', this.form)
+              axios.post('/api/sampling', this.form)
           .then(() => {
         window.location.reload()
         Notification.success()
