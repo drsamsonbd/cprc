@@ -73,7 +73,7 @@
         </div>
       </li>
 
-    <!--Stock Management-->  
+    <!--Setting Management-->  
       <li id="settings" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStock"
           aria-expanded="true" aria-controls="collapseStock">
@@ -94,19 +94,18 @@
           </div>
         </div>
       </li>
-      <!--Item Management-->  
-      <li id="items" class="nav-item" style="display:none">
+      <!--Report Management-->  
+      <li id="reports" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap3"
           aria-expanded="true" aria-controls="collapseBootstrap3">
-          <i class="fas fa-dna"></i>
-          <span>Item</span>
+          <i class="fas fa-book"></i>
+          <span>Laporan</span>
         </a>
         <div id="collapseBootstrap3" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
            
-            <router-link class="collapse-item" to="/items">Item</router-link>
-      <!--      <router-link class="collapse-item" to="/category">Kategori</router-link>-->
-            <router-link class="collapse-item" to="/itemsetting">Tetapan</router-link>
+          <router-link class="collapse-item" to="/dailyreport">Harian</router-link>  <!--      <router-link class="collapse-item" to="/category">Kategori</router-link>-->
+          <!--  <router-link class="collapse-item" to="/itemsetting">Tetapan</router-link>-->
           </div>
         </div>
       </li>
@@ -439,6 +438,7 @@
       $("#items").css("display",""); 
       $("#patient").css("display",""); 
       $("#settings").css("display",""); 
+      $("#reports").css("display",""); 
     }
     else if(roles.includes("kesihatan")){
       $("#patient").css("display",""); 
@@ -447,6 +447,7 @@
     else if(roles.includes("hospital")){
       $("#patient").css("display",""); 
       $("#settings").css("display",""); 
+      $("#reports").css("display",""); 
  
  }  
 

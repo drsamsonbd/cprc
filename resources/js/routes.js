@@ -35,8 +35,8 @@ let editproduct= require('./components/product/edit.vue').default;
 let allocation = require('./components/finance/index.vue').default;
 let code = require('./components/finance/category.vue').default;
 
-//items component
-let items = require('./components/items/index.vue').default;
+//report component
+let dailyreport = require('./components/reports/index.vue').default;
 let itemSetting = require('./components/items/setting.vue').default;
 
 //profile component
@@ -86,8 +86,8 @@ export const routes = [
     { path: '/allocation', component: allocation, name:'allocation' },
     { path: '/code', component: code, name:'code' },
 
-     //item routes
-     { path: '/items', component: items, name:'items' },
+     //reports routes
+     { path: '/dailyreport', component: dailyreport, name:'dailyreport' },
      { path: '/itemsetting', component: itemSetting, name:'itemSetting' },
 
 
