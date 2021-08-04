@@ -56,7 +56,7 @@
           </div>
         </div>
       </li>
-      <!--Finance Management-->
+      <!--Patient Management-->
       <li id="patient" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
           aria-expanded="true" aria-controls="collapseBootstrap2">
@@ -72,7 +72,22 @@
           </div>
         </div>
       </li>
-
+      <!--PKRC Management-->
+      <li id="pkrc" class="nav-item" style="display:none">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePkrc"
+          aria-expanded="true" aria-controls="collapsePkrc">
+          <i class="fas fa-clinic-medical"></i></i>
+          <span>PKRC</span>
+        </a>
+        <div id="collapsePkrc" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+          <router-link class="collapse-item" to="/caselist">Senarai Dalam PKRC</router-link>
+            <router-link class="collapse-item" to="/patient">Daftar Pesakit</router-link>
+            <router-link class="collapse-item" to="/case">Review Harian</router-link>
+            <router-link class="collapse-item" to="/sampling">Discaj</router-link>
+          </div>
+        </div>
+      </li>
     <!--Setting Management-->  
       <li id="settings" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStock"
@@ -96,12 +111,12 @@
       </li>
       <!--Report Management-->  
       <li id="reports" class="nav-item" style="display:none">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap3"
-          aria-expanded="true" aria-controls="collapseBootstrap3">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap5"
+          aria-expanded="true" aria-controls="collapseBootstrap5">
           <i class="fas fa-book"></i>
           <span>Laporan</span>
         </a>
-        <div id="collapseBootstrap3" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+        <div id="collapseBootstrap5" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
            
           <router-link class="collapse-item" to="/dailyreport">Harian</router-link>  <!--      <router-link class="collapse-item" to="/category">Kategori</router-link>-->
@@ -439,6 +454,7 @@
       $("#patient").css("display",""); 
       $("#settings").css("display",""); 
       $("#reports").css("display",""); 
+      $("#pkrc").css("display",""); 
     }
     else if(roles.includes("kesihatan")){
       $("#patient").css("display",""); 
@@ -448,6 +464,7 @@
       $("#patient").css("display",""); 
       $("#settings").css("display",""); 
       $("#reports").css("display",""); 
+      $("#pkrc").css("display",""); 
  
  }  
 

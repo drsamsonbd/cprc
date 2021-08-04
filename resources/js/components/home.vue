@@ -372,7 +372,7 @@ export default{
         perPage: 20,
         currentPage: 1,
         pageOptions: [5, 10, 15, 25, { value: 100, text: "Show a lot" }],
-     sortBy: 'date',
+     sortBy: 'time',
         sortDesc: true,
         sortDirection: 'desc',
         filter: null,
@@ -380,6 +380,7 @@ export default{
         items: [],
         fields: [
           { key: 'date', label: 'Tarikh', sortable: true, sortDirection: 'asc' },
+          { key: 'time', label: 'Masa', sortable: true, sortDirection: 'asc' },
           { key: 'pkrc', label: 'PKRC', sortable: true, sortDirection: 'desc' },
           { key: 'male', label: 'Lelaki', sortable: true, sortDirection: 'desc' },
           { key: 'female', label: 'Perempuan', sortable: true, sortDirection: 'desc' },
