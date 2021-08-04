@@ -39,6 +39,7 @@ Route::apiResource('/cases', 'Api\CaseController');
 Route::apiResource('/samples', 'Api\SamplingController');
 Route::apiResource('/caselist', 'Api\CaseListController');
 Route::apiResource('/reports', 'Api\ManualReportController');
+Route::apiResource('/sum', 'Api\ReportSumController');
 
 Route::post('/password/update/{id}', 'Api\UserController@edit');
 Route::post('/password/selfupdate/{id}', 'Api\UserController@selfupdate');
