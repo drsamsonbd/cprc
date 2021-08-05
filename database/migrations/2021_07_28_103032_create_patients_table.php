@@ -20,6 +20,7 @@ class CreatePatientsTable extends Migration
             $table->string('age');
             $table->string('gender');
             $table->string('race');
+            $table->string('address');
             $table->string('phone');
             $table->string('nationality');
             $table->string('job');

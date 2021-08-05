@@ -14,7 +14,20 @@ class CreateAdmissionsTable extends Migration
     public function up()
     {
         Schema::create('admissions', function (Blueprint $table) {
-            $table->id();
+            $table->id(); 
+            $table->string('reg_number');
+            $table->string('kp_passport');
+            $table->string('pkrc');
+            $table->string('marriage');
+            $table->string('religion');
+            $table->string('kin');
+            $table->string('kin_address');
+            $table->string('kin_relation');
+            $table->string('kin_phone');
+            $table->string('date');
+            $table->string('time');
+            $table->string('weight');
+            $table->string('note');
             $table->timestamps();
         });
     }

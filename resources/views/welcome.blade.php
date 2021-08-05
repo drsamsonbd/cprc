@@ -81,10 +81,10 @@
         </a>
         <div id="collapsePkrc" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-          <router-link class="collapse-item" to="/caselist">Senarai Dalam PKRC</router-link>
-            <router-link class="collapse-item" to="/patient">Daftar Pesakit</router-link>
-            <router-link class="collapse-item" to="/case">Review Harian</router-link>
-            <router-link class="collapse-item" to="/sampling">Discaj</router-link>
+          <router-link class="collapse-item" to="/pkrclist">Senarai Pesakit</router-link>
+            <router-link class="collapse-item" to="/admission">Daftar Kemasukan</router-link>
+            <router-link class="collapse-item" to="/review">Review Harian</router-link>
+            <router-link class="collapse-item" to="/discharge">Discaj</router-link>
           </div>
         </div>
       </li>

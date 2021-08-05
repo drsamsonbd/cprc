@@ -361,7 +361,7 @@
                  
                   </form> 
    </b-modal>
-   </b-modal>
+  
    </div>
 <!--viewModal-->
 

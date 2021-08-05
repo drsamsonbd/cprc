@@ -38,10 +38,12 @@ class pkrcController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'pkrc'=>'required|unique:pkrcs|min:3'
+            'pkrc'=>'required|unique:pkrcs|min:3',
+            'capacity'=>''
         ]);
         $pkrc = new pkrc;
         $pkrc->pkrc = $request->pkrc;
+        $pkrc->capacity = $request->capacity;
         $pkrc->save();
     }
 
@@ -79,6 +81,7 @@ class pkrcController extends Controller
     {
         $data = array();
         $data['pkrc'] = $request->pkrc;
+        $data['capacity'] = $request->capacity;
         DB::table('pkrcs')->where('id',$id)->update($data);
     }
 

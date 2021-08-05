@@ -26,10 +26,12 @@ let pkrc= require('./components/settings/pkrc.vue').default;
 let vaccine= require('./components/settings/vaccine.vue').default;
 
 
-//product component
-let storeproduct= require('./components/product/create.vue').default;
-let product= require('./components/product/index.vue').default;
-let editproduct= require('./components/product/edit.vue').default;
+//pkrc component
+let admission= require('./components/pkrc/admission.vue').default;
+let pkrclist= require('./components/pkrc/index.vue').default;
+let discharge= require('./components/pkrc/discharge.vue').default;
+let review= require('./components/pkrc/review.vue').default;
+let vital= require('./components/pkrc/vital.vue').default;
 
 //finance component
 let allocation = require('./components/finance/index.vue').default;
@@ -76,10 +78,12 @@ export const routes = [
   { path: '/case', component: case_reg, name:'case'},
   { path: '/sampling', component: sampling, name:'sampling'},
 
-    //product routes
-    { path: '/product', component: product, name:'product' },
-    { path: '/store-product', component: storeproduct, name:'store-product' },
-    { path: '/edit-product/:id', component: editproduct, name:'edit-product' },
+    //pkrc routes
+    { path: '/admission', component: admission, name:'admission' },
+    { path: '/pkrclist', component: pkrclist, name:'pkrclist' },
+    { path: '/review', component: review, name:'review' },
+    { path: '/discharge', component: discharge, name:'discharge' },
+    { path: '/vital', component: vital, name:'vital' },
 
 
     //finance routes

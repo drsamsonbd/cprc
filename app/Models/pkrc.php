@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class pkrc extends Model
 {
     protected $fillable = [
-        'pkrc'
+        'pkrc',
+        'capacity'
     ];
 }

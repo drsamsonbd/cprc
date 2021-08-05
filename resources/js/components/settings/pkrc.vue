@@ -16,8 +16,17 @@
               <b-row>
                 <b-col>
                   <label for=""><b>PKRC</b></label>
-              <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Sila masukkan mukim" v-model="form.pkrc">
+              <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Sila masukkan PKRC" v-model="form.pkrc">
               <small class="text-danger" v-if="errors.pkrc"> {{ errors.pkrc[0] }} </small>   
+                </b-col>
+            </b-row>
+            
+                      <br>
+               <b-row>
+                <b-col>
+                  <label for=""><b>Kapasiti</b></label>
+              <input type="text" class="form-control" id="exampleInputFirstName" placeholder="capacity" v-model="form.capacity">
+              <small class="text-danger" v-if="errors.capacity"> {{ errors.capacity[0] }} </small>   
                 </b-col>
             </b-row>
                       <br>
@@ -46,7 +55,13 @@
                 </b-col>
             </b-row>
             <br>
-         
+            <b-row>
+                <b-col>
+                  <label for=""><b>Kapasiti</b></label>
+              <input type="text" class="form-control" id="exampleInputFirstName" placeholder="capacity" v-model="forms.capacity">
+              <small class="text-danger" v-if="errors.capacity"> {{ errors.capacity[0] }} </small>   
+                </b-col>
+            </b-row>
             <br>
             <b-row>
               <b-col>
@@ -232,13 +247,14 @@
       return{
           form:{
           pkrc: null,
+          capacity: null,
           
           
       
         },
           forms:{          
            pkrc: null,
-       
+          capacity: null,
       
         },
         errors:{},     
@@ -258,7 +274,7 @@
         categoryperPage: 15,
         categorycurrentPage: 1,
         categorypageOptions: [5, 10, 15, 25, { value: 100, text: "Show a lot" }],
-        categorysortBy: 'finance_code',
+        categorysortBy: 'pkrc',
         categorysortDesc: false,
         categorysortDirection: 'asc',
         categoryfilter: null,
@@ -266,6 +282,7 @@
         categoryitems: [],
         categoryfields: [
           { key: 'pkrc', label: 'PKRC', sortable: true, sortDirection: 'asc' },
+          { key: 'capacity', label: 'Kapasiti', sortable: true, sortDirection: 'asc' },
           { key: 'actions', label: 'Actions' },
 
         ],

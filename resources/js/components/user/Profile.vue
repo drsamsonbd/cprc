@@ -61,7 +61,7 @@
                      <div class="form-group">
                       <label>Password</label>
                       <input type="password" class="form-control" id="InputPassword"
-                        placeholder="IC No" v-model="formr.password">
+                        placeholder="New Password" v-model="formr.password">
                          <small class="text-danger" v-if="errors.password">{{errors.password[0]}}</small>
                     </div>  
                      <div class="form-group">

@@ -7,5 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class admission extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'reg_number',
+        'kp_passport',
+        'pkrc',
+        'marriage',
+        'religion',
+        'kin',
+        'kin_address',
+        'kin_relation',
+        'kin_phone',
+        'date',
+        'time',
+        'weight',
+        'note'
+
+    ];
 }

@@ -24,21 +24,10 @@ class ManualReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function operation()
+    public function create()
     {
-        $ManualReport = ManualReport::select('id', 'date')
- 
-        ->withSum('male', 'female','paeds_male','paeds_female')
-
-        ->get()
-
-        ->toArray();
-
-
-
-dd($ManualReport);
+        //
     }
-
 
     
     /**

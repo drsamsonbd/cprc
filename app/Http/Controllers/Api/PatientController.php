@@ -43,6 +43,7 @@ class PatientController extends Controller
             'age'=>'required',
             'gender'=>'required',
             'race'=>'',
+            'address'=>','
             'phone'=>'',
             'nationality'=>'required',
             'job'=>'',
@@ -57,6 +58,7 @@ class PatientController extends Controller
         $patient->age = $request->age;
         $patient->gender = $request->gender;
         $patient->race = $request->race;
+        $patient->address = $request->address;
         $patient->phone = $request->phone;
         $patient->nationality = $request->job;
         $patient->workplace = $request->workplace;
@@ -104,6 +106,7 @@ class PatientController extends Controller
         $data['age'] = $request->age;
         $data['gender'] = $request->gender;
         $data['race'] = $request->race;
+        $data['address'] = $request->address;
         $data['phone'] = $request->phone;
         $data['nationality'] = $request->nationality;
         $data['job'] = $request->job;

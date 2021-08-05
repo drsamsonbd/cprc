@@ -89,7 +89,7 @@
 </div>-->
   <!--viewModal-->
   <div>
-  <b-modal ref="view-modal" size="xl" hide-footer title="Data Pesakit">     
+  <b-modal ref="view-modal" size="xl" hide-footer title="Data Harian PKRC">     
           <form class="patient" > 
                     <div class="form-group" hidden>
                       <label>User ID:</label>
