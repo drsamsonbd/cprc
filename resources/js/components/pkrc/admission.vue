@@ -9,7 +9,7 @@
    <div class="col-lg-12 ">
    
 
-    <b-modal ref="my-modal" size="xl" hide-footer title="Daftar Admission">
+    <b-modal ref="my-modal" size="xl" hide-footer title="Daftar Kemasukan">
     
            <form class="user" @submit.prevent="register">
                   
@@ -112,7 +112,7 @@
                     </b-row>
                     <br>
                     <div class="form-group">
-                      <button type="submit"  class="btn btn-primary btn-block">Daftar Kes</button>
+                      <button type="submit"  class="btn btn-primary btn-block">Daftar Kemasukan</button>
                     </div>
                     <hr>
                  
@@ -123,7 +123,7 @@
   
   <!--userUpdate Modal-->
   <div>
-  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Admission">     
+  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Kemasukan">     
           <form class="user" @submit.prevent="patientUpdate"> 
                     <div class="form-group" hidden>
                       <label>User ID:</label>
@@ -222,7 +222,7 @@
                     </b-row>
                     <br>
                     <div class="form-group">
-                      <button type="submit"  class="btn btn-primary btn-block">Daftar Kes</button>
+                      <button type="submit"  class="btn btn-primary btn-block">Kemaskini</button>
                     </div>
                     <hr>
                
