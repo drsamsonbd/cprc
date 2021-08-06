@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class discharge extends Model
 {
     protected $fillable = [
+    'kp_passport',
     'reg_number',
     'date',
     'duration',

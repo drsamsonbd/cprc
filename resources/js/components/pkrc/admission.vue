@@ -31,7 +31,7 @@
                     <b-row>
                        <b-col>
                       <label>Agama</label>
-                        <select class="form-control" id="name" v-model="form.religion">                  
+                        <select class="form-control" id="religion" v-model="form.religion">                  
                         <option >Islam</option>
                         <option >Kristian</option>
                         <option>Buddha</option>
@@ -40,7 +40,7 @@
                     </b-col>
                    <b-col>
                       <label>Taraf Perkahwinan</label>
-                        <select class="form-control" id="name" v-model="form.marriage">                  
+                        <select class="form-control" id="marriage" v-model="form.marriage">                  
                         <option >Bujang</option>
                         <option >Kahwin</option>
                         <option>Duda</option>
@@ -389,7 +389,6 @@
         this.allCases();
         this.pkrc();
         this.hospital();
-        this.locality();
       },
 
       

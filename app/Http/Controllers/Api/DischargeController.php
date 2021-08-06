@@ -39,6 +39,7 @@ class dischargeController extends Controller
     {
      
         $discharge = new discharge;
+        $discharge->kp_passport = $request ->  kp_passport;
         $discharge->reg_number = $request ->  reg_number;
         $discharge->date = $request    ->  date;
         $discharge->duration = $request    ->  duration;
@@ -80,6 +81,7 @@ class dischargeController extends Controller
     public function update(Request $request, $id)
     {
         $data = array();
+        $data['kp_passport']= $request->   kp_passport;
         $data['reg_number']= $request->   reg_number;
         
         $data['date'] = $request -> date;

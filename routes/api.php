@@ -43,6 +43,7 @@ Route::apiResource('/sum', 'Api\ReportSumController');
 Route::apiResource('/admission', 'Api\AdmissionController');
 Route::apiResource('/admissions', 'Api\AdmissionRecordController');
 Route::apiResource('/discharge', 'Api\DischargeController');
+Route::apiResource('/discharges', 'Api\DischargeRecordController');
 
 Route::post('/password/update/{id}', 'Api\UserController@edit');
 Route::post('/password/selfupdate/{id}', 'Api\UserController@selfupdate');

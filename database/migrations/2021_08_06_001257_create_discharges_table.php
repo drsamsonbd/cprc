@@ -15,6 +15,7 @@ class CreateDischargesTable extends Migration
     {
         Schema::create('discharges', function (Blueprint $table) {
             $table->id();
+            $table->string('kp_passport');
             $table->string('reg_number');
             $table->string('date');
             $table->string('duration');
