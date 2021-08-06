@@ -385,7 +385,6 @@
       Notification.unauthorized()
     }
  
-
         this.allPatient();
         this.allCases();
         this.pkrc();
@@ -477,8 +476,6 @@
         table:'',
       }
  
-
-
 
 
 
@@ -582,9 +579,7 @@
        hideModal() {
         this.$refs['edit-modal'].hide()
 
-
-
-        
+       
       },
        toggleModal(id) {
          axios.get('/api/admission/'+id)
@@ -592,13 +587,7 @@
         this.$refs['edit-modal'].toggle('#toggle-btn')
        
       },
-      toggleModal2(id) {
-         axios.get('/api/admission/'+id)
-  	    .then(({data}) => (this.formr = data))
-        this.$refs['reset-modal'].toggle('#toggle-btnreset')
-       
-      },
-   
+    
        register(){
           axios.post('/api/admission', this.form)
           .then(() => {
