@@ -314,9 +314,10 @@
     >
      
        <template #cell(review)="row">
-        <b-button size="sm" id="toggle-btn"  @click="toggleModal(row.item.id)" class="mr-1">
-         <i class="fas fa-user-edit"></i>
-        </b-button>    
+           <div v-if="row.item.date_dc==null"> <router-link :to="{name: 'dischargeform', params:{id:row.item.id}}" class="btn btn-sm btn-primary">Review</router-link>
+</div>
+        <div v-else> {{row.item.date_dc}}
+</div>   
       </template>
        <template #cell(discharge)="row">
          <div v-if="row.item.date_dc==null"> <router-link :to="{name: 'dischargeform', params:{id:row.item.id}}" class="btn btn-sm btn-primary">Discaj</router-link>
