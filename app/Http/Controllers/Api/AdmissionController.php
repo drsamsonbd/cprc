@@ -37,7 +37,12 @@ class AdmissionController extends Controller
      */
     public function store(Request $request)
     {
-     
+        $validateData = $request->validate([
+           
+            'reg_number'=>'required|unique:admissions',
+         
+
+        ]);
         $admission = new Admission;
         $admission->reg_number = $request-> reg_number;
        $admission->kp_passport = $request-> kp_passport;
@@ -52,6 +57,7 @@ class AdmissionController extends Controller
        $admission->time = $request->         time;
        $admission->weight = $request->         weight;
        $admission->note = $request->         note; 
+       $admission->date_dc = $request->         date_dc; 
        $admission->save();
     }
 
@@ -101,6 +107,7 @@ class AdmissionController extends Controller
         $data['time']= $request->          time;
         $data['weight']= $request->            weight;
         $data['note']= $request->          note; 
+        $data['date_dc']= $request->          date_dc; 
         DB::table('admissions')->where('id',$id)->update($data);
     }
 

@@ -16,7 +16,7 @@ class CreatePkrcsTable extends Migration
         Schema::create('pkrcs', function (Blueprint $table) {
             $table->id();
             $table->string('pkrc');
-            $table->string('capacity');
+            $table->string('capacity')->nullable();
             $table->timestamps();
         });
     }

@@ -14,9 +14,10 @@ class PatientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $patient = Patient::all()
-        ->orderBy('name','asc');
-        ->get()
+    {   $patient = Patient::all();
+        $patient = DB::table('patients')
+        ->orderBy('name','asc')
+        ->get();   
         return response()->json($patient);
     }
 

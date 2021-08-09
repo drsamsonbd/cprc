@@ -86,7 +86,6 @@
                      <b-col>
                       <label>Berat Pesakit</label>
                       <input type="text" class="form-control" id="daily_number" v-model="form.weight">
-                         <small class="text-danger" v-if="errors.weight">{{errors.weight[0]}}</small>
                    </b-col>
                     <b-col>
                       <label>PKRC</label>
@@ -107,6 +106,7 @@
                      <b-col>
                       <label>Nota</label>
                        <input type="text" class="form-control" id="note" v-model="form.note">
+                          <small class="text-danger" v-if="errors.note">{{errors.note[0]}}</small>
                      
                    </b-col>                 
                     </b-row>
@@ -401,6 +401,7 @@
           localities:[],
           hospitals:[],
           views:[],  
+
           form:{         
           kp_passport: null,
           reg_number: null,
@@ -554,7 +555,7 @@
                   confirmButtonText: 'Teruskan'
                 }).then((result) => {
                   if (result.value) {
-                    axios.delete('/api/case/'+id)
+                    axios.delete('/api/admission/'+id)
                   .then(() => {
                     window.location.reload()
                    
@@ -590,14 +591,14 @@
        register(){
           axios.post('/api/admission', this.form)
           .then(() => {
-         this.allCases()
+             window.location.reload()
         Notification.success()
          })
           .catch(error=> this.errors = error.response.data.errors)
           .catch(
             Toast.fire({
               icon: 'warning',
-              title: 'Invalid data Entry'
+              title: 'Invalid data entry'
             })
           )
         },

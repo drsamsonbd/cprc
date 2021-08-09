@@ -10,7 +10,7 @@ class discharge extends Model
     protected $fillable = [
     'kp_passport',
     'reg_number',
-    'date',
+    'date_dc',
     'duration',
     'type_dc',
     'notes'

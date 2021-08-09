@@ -17,10 +17,10 @@ class CreateDischargesTable extends Migration
             $table->id();
             $table->string('kp_passport');
             $table->string('reg_number');
-            $table->string('date');
+            $table->string('date_dc');
             $table->string('duration');
             $table->string('type_dc');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
     }

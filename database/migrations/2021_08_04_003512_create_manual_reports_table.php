@@ -29,7 +29,7 @@ class CreateManualReportsTable extends Migration
             $table->string('stage_1');
             $table->string('stage_2');
             $table->string('staff');
-            $table->string('notes'); 
+            $table->string('notes')->nullable(); 
 
             $table->timestamps();
         });

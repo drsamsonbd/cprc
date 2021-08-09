@@ -19,14 +19,14 @@ class CreatePatientsTable extends Migration
             $table->string('kp_passport');
             $table->string('age');
             $table->string('gender');
-            $table->string('race');
-            $table->string('address');
-            $table->string('phone');
+            $table->string('race')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
             $table->string('nationality');
-            $table->string('job');
-            $table->string('workplace');
-            $table->string('area');     
-            $table->string('notes');
+            $table->string('job')->nullable();
+            $table->string('workplace')->nullable();
+            $table->string('area')->nullable();     
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
     }

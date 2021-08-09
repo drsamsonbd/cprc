@@ -74,19 +74,12 @@
       </li>
       <!--PKRC Management-->
       <li id="pkrc" class="nav-item" style="display:none">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePkrc"
+        <a class="nav-link " href="/#/pkrclist" 
           aria-expanded="true" aria-controls="collapsePkrc">
-          <i class="fas fa-clinic-medical"></i></i>
-          <span>PKRC</span>
+          <i class="fas fa-clinic-medical"></i>
+        <span>PKRC</span>
         </a>
-        <div id="collapsePkrc" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-          <router-link class="collapse-item" to="/pkrclist">Senarai Pesakit</router-link>
-            <router-link class="collapse-item" to="/admission">Daftar Kemasukan</router-link>
-            <router-link class="collapse-item" to="/review">Review Harian</router-link>
-            <router-link class="collapse-item" to="/discharge">Discaj</router-link>
-          </div>
-        </div>
+      
       </li>
     <!--Setting Management-->  
       <li id="settings" class="nav-item" style="display:none">

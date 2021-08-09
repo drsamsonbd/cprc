@@ -16,7 +16,7 @@
                       <b-row>
                         <b-col>
                       <label>Sila masukkan RN pesakit</label>
-                       <select class="form-control" id="getrn" v-model="selectedRN"  @change="getRecord">
+                       <select class="form-control" id="getrn" v-model="selectedRN" >
                         <option v-for="patient in patients" v-bind:key="patient.id" :value="patient.id"> {{patient.reg_number }} | {{patient.name }} | {{patient.kp_passport }}</option>
                         
                         </select>
@@ -33,132 +33,7 @@
                
           
       </b-modal>
-  
-  <!--userUpdate Modal-->
-  <div>
-  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Rekod Ujian Kes">     
-          <form class="user" @submit.prevent="patientUpdate"> 
-                    <div class="form-group" hidden>
-                      <label>User ID:</label>
-                      <input type="hidden" class="form-control" id="exampleInputID" placeholder="ID" v-model="forms.id">
-                     
-                    </div>  
-                 
-                      <b-row>
-                        <b-col>
-                      <label>Nama</label>
-                      <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama mengikut kad pengenalan" v-model="forms.name" disabled>
-                     <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
-                     </b-col>
-                         <b-col>
-                      <label>Nombor K/P atau Passport</label>
-                      <input type="text" class="form-control" id="ICnumber" v-model="forms.kp_passport" disabled>
-                         <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
-                  </b-col>
-                      </b-row>
-                      <b-row>
-                   <b-col>
-                      <label>Simptomatik</label>
-                        <select class="form-control" id="name" v-model="form.symptomatic">                  
-                        <option >Ya</option>
-                        <option >Tidak</option>
-                        </select>
-                    </b-col>
 
-                     <b-col>
-                      <label>Onset</label>
-                      <input type="date" class="form-control" id="epid" v-model="form.onset">
-                         <small class="text-danger" v-if="errors.onset">{{errors.onset[0]}}</small>
-                    </b-col>
-                    </b-row>
-                  
-                  <b-row>
-                  <b-col>
-                      <label>Jenis Saringan</label>
-                     <select class="form-control" id="screening" v-model="form.screening_type"> 
-                       <option >Bergejala</option>  
-                       <option >Bersasar</option>               
-                        <option >Kontak</option>
-                        <option >Komuniti</option>
-                        <option >Kluster</option>
-                        <option >Masuk Kerja</option>
-                        <option >BID</option>
-                        </select>
-                         <small class="text-danger" v-if="errors.screening_type">{{errors.screening_type[0]}}</small>
-                   </b-col>
-                   <b-col>
-                        <label>Jenis Exposure</label>
-                     <select class="form-control" id="exposure" v-model="form.exposure_type"> 
-                       <option >Tempatan</option>  
-                       <option >Import A</option>               
-                        <option >Import B</option>
-                        <option >Import C</option>
-                       
-                        </select>
-                         <small class="text-danger" v-if="errors.exposure_type">{{errors.exposure_type[0]}}</small>
-                   </b-col>
-                  <b-col>
-                      <label>Reinfection?</label>
-                       <select class="form-control" id="reinfection" v-model="form.reinfection"> 
-                       <option >Ya</option>  
-                       <option >Tidak</option>    
-                       
-                        </select>
-                  </b-col>
-                  </b-row>
-
-                  <b-row>
-                     <b-col>
-                      <label>Tarikh Sampel</label>
-                      <input type="date" class="form-control" id="datesample" v-model="form.date_sample">
-                         <small class="text-danger" v-if="errors.date_sample">{{errors.date_sample[0]}}</small>
-                   </b-col>
-                     <b-col>
-                      <label>Jenis Sampel</label>
-                       <select class="form-control" id="reinfection" v-model="form.type_sample"> 
-                       <option >PCR</option>  
-                       <option >RTK-Ag</option>    
-                       <small class="text-danger" v-if="errors.type_sample">{{errors.type_sample[0]}}</small>
-                        </select>
-                  </b-col>
-                      <b-col>
-                      <label>Tarikh Sampel di MKA</label>
-                      <input type="date" class="form-control" id="datemka" v-model="form.date_mka">
-                   </b-col>
-                    </b-row>
-                      <b-row>
-                     <b-col>
-                      <label>Grading</label>
-                      <input type="text" class="form-control" id="grading" v-model="form.grading">
-                         <small class="text-danger" v-if="errors.grading">{{errors.grading[0]}}</small>
-                   </b-col>
-                    <b-col>
-                      <label>Tarikh Keputusan</label>
-                     <input type="date" class="form-control" id="dateresult" v-model="form.date_result">
-                         <small class="text-danger" v-if="errors.date_result">{{errors.date_result[0]}}</small>
-                    </b-col>
-                    </b-row>
-                            <b-row>
-            
-                    <b-col>
-                      <label>Tarikh 1st Dose</label>
-                     <input type="date" class="form-control" id="1stdose" v-model="form.first_dose_date">
-                    </b-col>
-                     <b-col>
-                      <label>Tarikh 2nd Dose</label>
-                     <input type="date" class="form-control" id="2nddose" v-model="form.second_dose_date">
-                    </b-col>
-                    </b-row>
-                    <br>
-                    <div class="form-group">
-                      <button type="submit" id="myBtn" class="btn btn-primary btn-block" @click="patientUpdate(patient.id)">Kemaskini</button>
-               
-                    </div>
-               
-                  </form> 
-   </b-modal>
-   </div>
-<!--userUpdate Modal-->
   
   <!--viewModal-->
   <div>
@@ -428,21 +303,8 @@
 
           views:[],  
           form:{         
-          kp_passport: null,
-          sypmtomatic: null,
-          onset: null,
-          screening_type: null,
-          exposure_type: null,
-          reinfection: null,
-          date_sample: null,
-          type_sample: null,
-          date_mka: null,
-          grading: null,
-          date_result: null,
-          vaccine_type: null,
-          first_dose_date:null,
-          second_dose_date: null,
-          notes: null,
+          reg_number: null,
+        
         },
           forms:{
           kp_passport: null,
@@ -623,18 +485,8 @@
  
    
        register(){
-          axios.post('/api/discharge', this.form)
-          .then(() => {
-        window.location.reload()
-        Notification.success()
-         })
-          .catch(error=> this.errors = error.response.data.errors)
-          .catch(
-            Toast.fire({
-              icon: 'warning',
-              title: 'Invalid data Entry'
-            })
-          )
+           let id = this.selectedRN;
+          this.$router.push({name:'dischargeform', params: {id: patient.id}}); 
         },
       patientUpdate(){
        let id = this.forms.id

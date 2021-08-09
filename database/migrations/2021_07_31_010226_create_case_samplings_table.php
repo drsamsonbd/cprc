@@ -16,20 +16,20 @@ class CreateCaseSamplingsTable extends Migration
         Schema::create('case_samplings', function (Blueprint $table) {
             $table->id();
             $table->string('kp_passport');
-            $table->string('symptomatic');
-            $table->string('onset');
+            $table->string('symptomatic')->nullable();
+            $table->string('onset')->nullable();
             $table->string('screening_type');
-            $table->string('exposure_type');
-            $table->string('reinfection');
+            $table->string('exposure_type')->nullable();
+            $table->string('reinfection')->nullable();
             $table->string('date_sample');
-            $table->string('date_mka');
+            $table->string('date_mka')->nullable();
             $table->string('type_sample');
             $table->string('grading');
             $table->string('date_result');
-            $table->string('vaccine_type');
-            $table->string('first_dose_date');
-            $table->string('second_dose_date');
-            $table->string('notes');
+            $table->string('vaccine_type')->nullable();
+            $table->string('first_dose_date')->nullable();
+            $table->string('second_dose_date')->nullable();
+            $table->string('notes')->nullable();
 
             $table->timestamps();
         });

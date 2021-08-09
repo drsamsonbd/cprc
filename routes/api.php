@@ -45,6 +45,7 @@ Route::apiResource('/admissions', 'Api\AdmissionRecordController');
 Route::apiResource('/discharge', 'Api\DischargeController');
 Route::apiResource('/discharges', 'Api\DischargeRecordController');
 
+Route::get('/admission/kp/{id}', 'Api\AdmissionRecordController@kp_passport');
 Route::post('/password/update/{id}', 'Api\UserController@edit');
 Route::post('/password/selfupdate/{id}', 'Api\UserController@selfupdate');
 Route::get('/items/view/{id}', 'Api\ItemsController@view');

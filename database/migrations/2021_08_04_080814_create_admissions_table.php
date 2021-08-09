@@ -15,19 +15,20 @@ class CreateAdmissionsTable extends Migration
     {
         Schema::create('admissions', function (Blueprint $table) {
             $table->id(); 
-            $table->string('reg_number');
+            $table->string('reg_number')->nullable();
             $table->string('kp_passport');
             $table->string('pkrc');
-            $table->string('marriage');
-            $table->string('religion');
-            $table->string('kin');
-            $table->string('kin_address');
-            $table->string('kin_relation');
-            $table->string('kin_phone');
+            $table->string('marriage')->nullable();
+            $table->string('religion')->nullable();
+            $table->string('kin')->nullable();
+            $table->string('kin_address')->nullable();
+            $table->string('kin_relation')->nullable();
+            $table->string('kin_phone')->nullable();
             $table->string('date');
             $table->string('time');
-            $table->string('weight');
-            $table->string('note');
+            $table->string('weight')->nullable();
+            $table->string('note')->nullable();
+            $table->string('date_dc')->nullable();
             $table->timestamps();
         });
     }

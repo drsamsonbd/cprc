@@ -17,13 +17,13 @@ class CreateCaseRegsTable extends Migration
             $table->id();
             $table->string('kp_passport');
             $table->string('year');
-            $table->string('epid_week');
-            $table->string('cumulative');
-            $table->string('date_report_KKM');
-            $table->string('daily_number');
+            $table->string('epid_week')->nullable();
+            $table->string('cumulative')->nullable();
+            $table->string('date_report_KKM')->nullable();
+            $table->string('daily_number')->nullable();
             $table->string('district');
-            $table->string('locality');
-            $table->string('treating_hospital');
+            $table->string('locality')->nullable();
+            $table->string('treating_hospital')->nullable();
             $table->timestamps();
         });
     }

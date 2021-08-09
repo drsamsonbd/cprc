@@ -12,9 +12,9 @@ class AdmissionRecordController extends Controller
     {
         $admission= DB::table('admissions')
        ->join('patients','admissions.kp_passport','patients.kp_passport')
-       // ->join('case_samplings','patients.kp_passport','case_samplings.kp_passport')
+       ->leftjoin('discharges','admissions.reg_number','=','discharges.reg_number')
        // ->select('patients.*','case_regs.*','case_samplings.*')
-       ->select('patients.name','patients.phone','admissions.*')
+       ->select('patients.name','patients.kp_passport','admissions.*','discharges.date_dc', 'discharges.duration', 'discharges.type_dc', 'discharges.notes')
        ->orderBy('admissions.date','desc')
        ->get()
        ;
@@ -29,6 +29,19 @@ class AdmissionRecordController extends Controller
         // ->select('patients.*','case_regs.*','case_samplings.*')
         ->select('patients.name','patients.phone','admissions.*')
         ->orderBy('admissions.date','desc')
+        ->get()     
+       ;
+          return response()->json($admission);
+    }
+
+    public function kp_passport($id)
+    {
+        $admission= DB::table('admissions')->where('admissions.kp_passport',$id)
+        ->join('patients','patients.kp_passport','admissions.kp_passport')
+        // ->join('case_samplings','patients.kp_passport','case_samplings.kp_passport')
+        // ->select('patients.*','case_regs.*','case_samplings.*')
+        ->select('patients.name')
+   
         ->get()     
        ;
           return response()->json($admission);
