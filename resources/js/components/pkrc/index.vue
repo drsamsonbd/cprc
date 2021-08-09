@@ -475,7 +475,7 @@
           { key: 'date', label: 'Tarikh Kemasukan', sortable: true, sortDirection: 'desc' },
           { key: 'review', label: 'Review', sortable: true, sortDirection: 'desc' },
           { key: 'discharge', label: 'Discaj', sortable: true, sortDirection: 'desc' },
-          { key: 'actions', label: 'Actions' },
+          //{ key: 'actions', label: 'Actions' },
            ],
         table:'',
       }
