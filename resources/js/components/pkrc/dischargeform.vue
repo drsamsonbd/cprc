@@ -28,7 +28,7 @@
                   </b-col>
                     <b-col>
                       <label>Nombor K/P atau Passport</label>
-                      <input type="text" class="form-control" id="ICnumber" v-model="form.kp_passport" disabled  v-on:input="searcName($event, form.kp_passport)">
+                      <input type="text" class="form-control" id="ICnumber" v-model="form.kp_passport" disabled >
                        
                   </b-col>
                       </b-row>
@@ -38,7 +38,8 @@
                       <input type="date" class="form-control" id="datedc" v-model="form.date_dc">
                          <small class="text-danger" v-if="errors.date_dc">{{errors.date_dc[0]}}</small>
                    </b-col>
-                     <b-col>Masa Tinggal (Hari)
+                     <b-col>
+                       <label>Masa Tinggal (Hari)</label>
                       <input type="number" class="form-control" id="duration" v-model="form.duration">
                          <small class="text-danger" v-if="errors.duration">{{errors.duration[0]}}</small>
                    </b-col>
@@ -54,12 +55,17 @@
                     </b-col>
                   
                     </b-row>
-                
+                  <b-row>
+                     <b-col>
+                      <label>Diagnosis</label>
+                      <input type="text" class="form-control" id="diagnosis" v-model="form.diagnosis">
+                         <small class="text-danger" v-if="errors.diagnosis">{{errors.diagnosis[0]}}</small>
+                   </b-col>
+                  </b-row>
                       <b-row>
                      <b-col>
                       <label>Nota</label>
-                      <input type="text" class="form-control" id="notes" v-model="form.notes">
-                         <small class="text-danger" v-if="errors.notes">{{errors.notes[0]}}</small>
+                      <textarea type="text" class="form-control" id="notes" v-model="form.notes"></textarea>
                    </b-col>
                  
                     </b-row>
@@ -95,7 +101,7 @@ import Header from '../container/Header.vue';
       
     
         axios.get('/api/admissions/'+this.$route.params.id)
-    .then(({data}) => (this.form = data[0]))
+        .then(({data}) => (this.form = data[0]))
       },
            discaj(){
           axios.post('/api/discharge', this.form)
@@ -136,8 +142,9 @@ import Header from '../container/Header.vue';
            name:null,
            kp_passport:null,
            reg_number: null,
-           date_dc: null,
+           date_dc:null ,
            duration: null,
+           diagnosis: null,
            type_dc: null,
            notes: null,
           },
@@ -163,6 +170,7 @@ import Header from '../container/Header.vue';
     },
     mounted: function(){
       this.cases();
+       
     }, 
    
 

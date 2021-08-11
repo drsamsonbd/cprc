@@ -19,6 +19,7 @@ class CreateDischargesTable extends Migration
             $table->string('reg_number');
             $table->string('date_dc');
             $table->string('duration');
+            $table->string('diagnosis');
             $table->string('type_dc');
             $table->string('notes')->nullable();
             $table->timestamps();

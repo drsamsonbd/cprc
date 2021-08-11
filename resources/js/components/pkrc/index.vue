@@ -314,7 +314,7 @@
     >
      
        <template #cell(review)="row">
-           <div v-if="row.item.date_dc==null"> <router-link :to="{name: 'dischargeform', params:{id:row.item.id}}" class="btn btn-sm btn-primary">Review</router-link>
+           <div v-if="row.item.date_dc==null"> <router-link :to="{name: 'review', params:{id:row.item.id}}" class="btn btn-sm btn-primary">Review</router-link>
 </div>
         <div v-else> {{row.item.date_dc}}
 </div>   

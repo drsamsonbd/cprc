@@ -43,6 +43,7 @@ class dischargeController extends Controller
         $discharge->reg_number = $request ->  reg_number;
         $discharge->date_dc = $request    ->  date;
         $discharge->duration = $request    ->  duration;
+        $discharge->diagnosis = $request    ->  diagnosis;
         $discharge->type_dc = $request    ->  type_dc;
         $discharge->notes = $request    ->  notes;    
         $discharge->save();
@@ -86,6 +87,7 @@ class dischargeController extends Controller
         
         $data['date_dc'] = $request -> date;
         $data['duration'] = $request -> duration;
+        $data['diagnosis'] = $request -> duration;
         $data['type_dc'] = $request -> type_dc;
         $data['notes'] = $request ->   notes;
         DB::table('discharges')->where('id',$id)->update($data);
