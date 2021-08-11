@@ -353,6 +353,7 @@
                 </div>
                <div class="card-footer">
                    <p class="mt-3"  align="center">Current Page: {{ currentPage }}</p>
+                    <p class="mt-3"  align="center">Cumulative Case: {{ items.length }}</p>
                       <b-pagination  align="center"
                       v-model="currentPage"
                       :total-rows="rows"
