@@ -44,7 +44,8 @@
                         <option >Bujang</option>
                         <option >Kahwin</option>
                         <option>Duda</option>
-                        <option >Janda/Balu</option>
+                        <option >Janda/Balu</option>                        
+                        <option >Tiada data</option>
                         </select>
                     </b-col>                  
                     </b-row>
