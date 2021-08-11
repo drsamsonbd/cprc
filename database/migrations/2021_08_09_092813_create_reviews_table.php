@@ -17,8 +17,8 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string('kp_passport');
             $table->string('reg_number');
-            $table->string('date');
-            $table->string('time');
+            $table->string('date_review');
+            $table->string('time_review');
             $table->string('diagnosis');
             $table->string('warning_sign');
             $table->string('temp');

@@ -13,8 +13,8 @@ class AdmissionRecordController extends Controller
         $admission= DB::table('admissions')
        ->join('patients','admissions.kp_passport','patients.kp_passport')
        ->leftjoin('discharges','admissions.reg_number','=','discharges.reg_number')
-       // ->select('patients.*','case_regs.*','case_samplings.*')
-       ->select('patients.name','patients.kp_passport','admissions.*','discharges.date_dc', 'discharges.duration', 'discharges.type_dc', 'discharges.notes')
+       ->leftJoin('reviews','admissions.reg_number','=','reviews.reg_number')
+       ->select('patients.name','patients.kp_passport','admissions.*','discharges.date_dc', 'discharges.duration', 'discharges.type_dc', 'discharges.notes','reviews.date_review')
        ->orderBy('admissions.date','desc')
        ->get()
        ;

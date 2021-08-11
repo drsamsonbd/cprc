@@ -44,8 +44,8 @@ class reviewController extends Controller
         $review  -> warning_sign = join(',',$request->warning_sign);
         $review -> kp_passport = $request ->     kp_passport;
         $review -> reg_number = $request -> reg_number;
-        $review -> date = $request -> date;
-        $review -> time = $request -> time;
+        $review -> date_review = $request -> date_review;
+        $review -> time_review = $request -> time_review;
         $review -> diagnosis = $request -> diagnosis;
         $review -> temp = $request -> temp;
         $review -> pulse = $request -> pulse;
@@ -62,8 +62,8 @@ class reviewController extends Controller
     $review -> warning_sign='No';
     $review -> kp_passport = $request ->     kp_passport;
     $review -> reg_number = $request -> reg_number;
-    $review -> date = $request -> date;
-    $review -> time = $request -> time;
+    $review -> date_review = $request -> date_review;
+    $review -> time_review = $request -> time_review;
     $review -> diagnosis = $request -> diagnosis;
     $review -> temp = $request -> temp;
     $review -> pulse = $request -> pulse;
@@ -114,8 +114,8 @@ class reviewController extends Controller
         $data = array();
         $data['kp_passport'] = $request ->     kp_passport;
         $data['reg_number'] = $request -> reg_number;
-        $data['date'] = $request -> date;
-        $data['time'] = $request -> time;
+        $data['date_review'] = $request -> date_review;
+        $data['time_review'] = $request -> time_review;
         $data['diagnosis'] = $request -> diagnosis;
         $data['warning_sign'] = $request -> warning_sign;
         $data['temp'] = $request -> temp;

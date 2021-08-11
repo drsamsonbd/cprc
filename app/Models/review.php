@@ -10,8 +10,8 @@ class review extends Model
     protected $fillable = [
     'kp_passport',
 'reg_number',
-'date',
-'time',
+'date_review',
+'time_review',
 'diagnosis',
 'warning_sign',
 'temp',
