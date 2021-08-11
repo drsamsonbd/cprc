@@ -558,7 +558,7 @@
           { key: 'first_dose_date', label: '1st Dose', sortable: true, sortDirection: 'desc' },
           { key: 'second_dose_date', label: '2nd Dose', sortable: true, sortDirection: 'desc' },
           { key: 'notes', label: 'Status Saringan/ Kontak', sortable: true, sortDirection: 'desc' },
-          { key: 'actions', label: 'Actions' },
+        //  { key: 'actions', label: 'Actions' },
         ],
         table:'',
       }
