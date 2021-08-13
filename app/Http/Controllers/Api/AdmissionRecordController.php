@@ -14,7 +14,7 @@ class AdmissionRecordController extends Controller
        ->join('patients','admissions.kp_passport','patients.kp_passport')
        ->leftjoin('discharges','admissions.reg_number','=','discharges.reg_number')
        ->leftJoin('reviews','admissions.reg_number','=','reviews.reg_number')
-       ->select('patients.name','patients.kp_passport','admissions.*','discharges.date_dc', 'discharges.duration', 'discharges.type_dc', 'discharges.notes','reviews.date_review')
+       ->select('patients.name','patients.kp_passport','patients.gender','patients.age','patients.job','patients.address','admissions.*','discharges.date_dc', 'discharges.duration', 'discharges.type_dc', 'discharges.notes','reviews.date_review')
        ->orderBy('admissions.reg_number','desc')
        ->get()
        ;
@@ -25,9 +25,10 @@ class AdmissionRecordController extends Controller
     {
         $admission= DB::table('admissions')->where('admissions.id',$id)
         ->join('patients','patients.kp_passport','admissions.kp_passport')
-        // ->join('case_samplings','patients.kp_passport','case_samplings.kp_passport')
-        // ->select('patients.*','case_regs.*','case_samplings.*')
-        ->select('patients.name','patients.phone','admissions.*')
+        ->leftjoin('discharges','admissions.reg_number','=','discharges.reg_number')
+       ->leftJoin('reviews','admissions.reg_number','=','reviews.reg_number')
+       ->select('patients.name','patients.kp_passport','patients.gender','patients.age','patients.area','patients.job','patients.address','admissions.*','discharges.date_dc', 'discharges.duration', 'discharges.type_dc', 'discharges.notes','reviews.date_review')
+     
         ->orderBy('admissions.date','desc')
         ->get()     
        ;

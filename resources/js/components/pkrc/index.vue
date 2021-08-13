@@ -294,6 +294,115 @@
 
    
     </b-row>
+    <!--View Modal-->
+    <b-modal ref="view-modal" size="lg" hide-footer title="Data Pesakit">     
+       <div class="form-group" hidden>
+                      <label>User ID:</label>
+                      <input type="hidden" class="form-control" id="exampleInputID" placeholder="ID" v-model="views.id">
+                     
+                    </div>  
+                 
+                      <b-row>
+                        <b-col>
+                      <label>Nama</label>
+                      <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Nama mengikut kad pengenalan" v-model="views.name" disabled>
+                     <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
+                     </b-col>
+                 
+                     </b-row>
+                             
+                    <b-row>
+                      <b-col>
+                      <label>Nombor K/P atau Passport</label>
+                      <input type="text" class="form-control" id="ICnumber" v-model="views.kp_passport" disabled>
+                         <small class="text-danger" v-if="errors.kp_passport">{{errors.kp_passport[0]}}</small>
+                  </b-col>
+                   <b-col>
+                      <label>Jantina</label>
+                      <input type="text" class="form-control" id="gender" v-model="views.gender" disabled>
+                         <small class="text-danger" v-if="errors.gender">{{errors.gender[0]}}</small>
+                    </b-col>
+
+                     <b-col>
+                      <label>Umur</label>
+                      <input type="text" class="form-control" id="age" v-model="views.age" disabled>
+                         <small class="text-danger" v-if="errors.age">{{errors.age[0]}}</small>
+                    </b-col>
+                    </b-row>
+                  
+                  <b-row>
+                     <b-col>
+                      <label>Mukim</label>
+                      <input type="text" class="form-control" id="area" v-model="views.area" disabled>
+                         <small class="text-danger" v-if="errors.area">{{errors.area[0]}}</small>
+                   </b-col>
+                    <b-col>
+                      <label>Pekerjaan</label>
+                      <input type="text" class="form-control" id="job" v-model="views.job" disabled>
+                         <small class="text-danger" v-if="errors.job">{{errors.job[0]}}</small>
+                    </b-col>
+                    </b-row>
+                     <b-row>
+                      <b-col>
+                      <label>Alamat Tempat Kerja</label>
+                      <input type="text" class="form-control" id="workplace" v-model="views.workplace" disabled>
+                         <small class="text-danger" v-if="errors.workplace">{{errors.workplace[0]}}</small>
+                    </b-col>
+                       <b-col>
+                      <label>No. Tel</label>
+                      <input type="text" class="form-control" id="phone" v-model="views.phone" disabled>
+                         <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
+                    </b-col>
+                    </b-row>
+                    <hr>
+                   <b-table  responsive 
+      :items="admission_record"
+      :fields="fields_admission"
+      :current-page="currentPage"
+      :per-page="perPage"
+      :filter="filter"
+      :filter-included-fields="filterOn"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
+      :sort-direction="sortDirection"
+      stacked="md"
+      show-empty
+      small
+     
+      flex 
+      striped 
+      hover
+     
+    >
+     <template #cell(index)="data">
+        {{ data.index + 1 }}
+      </template>
+      <template #cell(item)="row">
+        {{ row.value.name }} {{ row.value.icno }} {{ row.value.email }} {{ row.value.roles}}
+      </template>
+
+      <template #cell(actions)="row">
+        <b-button size="sm" id="toggle-btn"  @click="toggleModal(row.item.id)" class="mr-1">
+         <i class="fas fa-user-edit"></i>
+        </b-button>
+        <b-button size="sm" class="btn btn-sm btn-danger" @click="deleteUser(row.item.id)">
+         <i class="fas fa-user-times"></i>
+        </b-button>
+      </template>
+
+      <template #row-details="row">
+        <b-card>
+          <ul>
+            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
+          </ul>
+        </b-card>
+      </template>
+    </b-table>
+                     
+    
+   </b-modal>
+ 
+<!--end View Modal-->
 
       <b-table  responsive 
       :items="items"
@@ -308,7 +417,7 @@
       stacked="md"
       show-empty
       small
-     
+      @row-clicked="viewModal"
       flex 
       striped 
       hover
@@ -482,6 +591,13 @@
           //{ key: 'actions', label: 'Actions' },
            ],
         table:'',
+             admission_record: [],
+        fields_admission: [
+          { key: 'pkrc', label: 'PKRC', sortable: true, sortDirection: 'desc' },
+          { key: 'reg_number', label: 'RN', sortable: true, sortDirection: 'desc' },
+         { key: 'date', label: 'Tarikh Kemasukan', sortable: true, sortDirection: 'desc' },
+           { key: 'actions', label: 'Actions' },
+           ],
       }
  
 
@@ -628,9 +744,9 @@
 
          viewModal(record) {
          let self = this;
-        axios.get('/api/cases/'+record.id)
+        axios.get('/api/admissions/'+record.id)
   	    .then(function (response) {
-        self.views = response.data;
+        self.views = response.data[0];
         })
         this.$refs['view-modal'].toggle('#toggle-btn')
    
