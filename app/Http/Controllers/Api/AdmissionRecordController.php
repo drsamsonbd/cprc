@@ -15,7 +15,7 @@ class AdmissionRecordController extends Controller
        ->leftjoin('discharges','admissions.reg_number','=','discharges.reg_number')
        ->leftJoin('reviews','admissions.reg_number','=','reviews.reg_number')
        ->select('patients.name','patients.kp_passport','admissions.*','discharges.date_dc', 'discharges.duration', 'discharges.type_dc', 'discharges.notes','reviews.date_review')
-       ->orderBy('admissions.date','desc')
+       ->orderBy('admissions.reg_number','desc')
        ->get()
        ;
           return response()->json($admission);

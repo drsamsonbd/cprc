@@ -55,6 +55,15 @@ class Notification{
         }).show();
 
     }
+    mo(){
+        new Noty({
+            type : 'error',
+            layout: 'topRight',
+            text: 'Medical Office access only!',
+            timeout: 1000,
+        }).show();
+
+    }
     image_validation(){
         new Noty({
             type : 'error',

@@ -45,8 +45,8 @@ let itemSetting = require('./components/items/setting.vue').default;
 //profile component
 let profile = require('./components/user/Profile.vue').default;
 
-//stock component
-let stock = require('./components/stock/index.vue').default;
+//statistics component
+let statistics_pkrc = require('./components/statistics/pkrc.vue').default;
 let stock_setting = require('./components/stock/setting.vue').default;
 let stock_out = require('./components/stock/out.vue').default;
 
@@ -100,8 +100,8 @@ export const routes = [
      //profile routes
      { path: '/profile', component: profile, name:'profile' },
 
-     //stock routes
-     { path: '/stock', component: stock, name:'stock' },
+     //statistics routes
+     { path: '/statistics_pkrc', component: statistics_pkrc, name:'statistics_pkrc' },
      { path: '/stock-setting', component: stock_setting, name:'stock-setting' },
      { path: '/stock/out', component: stock_out, name:'stock_out' },
   ]

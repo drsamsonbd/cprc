@@ -118,18 +118,18 @@
         </div>
       </li>
         <!--Forms Management-->  
-        <li id="forms" class="nav-item" style="display:none">
+        <li id="statistics" class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
           aria-expanded="true" aria-controls="collapseBootstrap4">
           <i class="fab fa-wpforms"></i>
-          <span>Borang</span>
+          <span>Statistik</span>
         </a>
         <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
            
-            <router-link class="collapse-item" to="/items">Borang</router-link>
+            <router-link class="collapse-item" to="/statistics_pkrc">PKRC</router-link>
       <!--      <router-link class="collapse-item" to="/category">Kategori</router-link>-->
-            <router-link class="collapse-item" to="/itemsetting">Tetapan</router-link>
+            <router-link class="collapse-item" to="/itemsetting">Kesihatan</router-link>
           </div>
         </div>
       </li>
@@ -448,16 +448,21 @@
       $("#settings").css("display",""); 
       $("#reports").css("display",""); 
       $("#pkrc").css("display",""); 
+      $("#statistics").css("display",""); 
     }
     else if(roles.includes("kesihatan")){
       $("#patient").css("display",""); 
       $("#settings").css("display",""); 
+      
+      $("#statistics").css("display",""); 
     }  
     else if(roles.includes("hospital")){
       $("#patient").css("display",""); 
       $("#settings").css("display",""); 
       $("#reports").css("display",""); 
       $("#pkrc").css("display",""); 
+      
+      $("#statistics").css("display",""); 
  
  }  
 

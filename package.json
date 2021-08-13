@@ -30,11 +30,13 @@
         "@popperjs/core": "^2.6.0",
         "bootstrap": "^5.0.1",
         "bootstrap-vue": "^2.21.2",
+        "chart.js": "^3.5.0",
         "jquery": "^3.6.0",
         "laravel-vue-pagination": "^2.3.1",
         "noty": "^3.2.0-beta",
         "sweetalert2": "^10.13.0",
         "vue": "^2.6.12",
+        "vue-chartjs": "^3.5.1",
         "vue-pagination-2": "^3.0.91",
         "vue-router": "^3.4.9",
         "vue-select": "^3.11.2"

@@ -19,17 +19,18 @@
                       <b-row>
                         <b-col>
                       <label>Nama</label>
-                      <input type="text" class="form-control" id="Name" v-model="form.name" 
+                      <input type="text" class="form-control" id="Name" v-model="admission.name" 
                       disabled>
                      </b-col>
                         <b-col>
                       <label>RN</label>
-                      <input type="text" class="form-control" id="ICnumber" v-model="form.reg_number" disabled>
+                      <input type="text" class="form-control" id="ICnumber" v-model="admission.reg_number" disabled>
+                        <input type="text" class="form-control" id="ICnumber" v-model="form.reg_number" disabled hidden>
                   </b-col>
                     <b-col>
                       <label>Nombor K/P atau Passport</label>
-                      <input type="text" class="form-control" id="ICnumber" v-model="form.kp_passport" disabled >
-                       
+                      <input type="text" class="form-control" id="ICnumber" v-model="admission.kp_passport" disabled >
+                       <input type="text" class="form-control" id="ICnumber" v-model="form.kp_passport" disabled hidden>
                   </b-col>
                       </b-row>
                       <b-row>
@@ -101,7 +102,7 @@ import Header from '../container/Header.vue';
       
     
         axios.get('/api/admissions/'+this.$route.params.id)
-        .then(({data}) => (this.form = data[0]))
+        .then(({data}) => (this.admission = data[0], this.form.reg_number = data[0].reg_number, this.form.kp_passport = data[0].kp_passport))
       },
            discaj(){
           axios.post('/api/discharge', this.form)
@@ -137,7 +138,7 @@ import Header from '../container/Header.vue';
       return{
         
         
-          admissions:[],
+          admission:[],
           form:{
            name:null,
            kp_passport:null,
