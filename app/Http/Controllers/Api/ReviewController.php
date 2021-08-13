@@ -90,7 +90,11 @@ class reviewController extends Controller
         $review = DB::table('reviews')->where('id',$id)->first();
         return response()->json($review);
     }
-
+    public function ReviewbyRN($id)
+    {
+        $review = DB::table('reviews')->where('reg_number',$id)->first();
+        return response()->json($review);
+    }
     /**
      * Show the form for editing the specified resource.
      *

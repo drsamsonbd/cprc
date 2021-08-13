@@ -20,8 +20,8 @@ class admission extends Model
         'date',
         'time',
         'weight',
-        'note',
-        'date_dc'
+        'note'
+        
 
     ];
 }

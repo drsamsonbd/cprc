@@ -354,6 +354,7 @@
                          <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
                     </b-col>
                     </b-row>
+      <!-- Admission Records-->
                     <hr>
                    <b-table  responsive 
       :items="admission_record"
@@ -381,25 +382,67 @@
         {{ row.value.name }} {{ row.value.icno }} {{ row.value.email }} {{ row.value.roles}}
       </template>
 
-      <template #cell(actions)="row">
-        <b-button size="sm" id="toggle-btn"  @click="toggleModal(row.item.id)" class="mr-1">
-         <i class="fas fa-user-edit"></i>
-        </b-button>
-        <b-button size="sm" class="btn btn-sm btn-danger" @click="deleteUser(row.item.id)">
-         <i class="fas fa-user-times"></i>
-        </b-button>
+      <template #cell(edit)="row">
+       <router-link :to="{name: 'admissionform', params:{id:row.item.id}}" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i></router-link> <br>
+        
+         
+       
+    
       </template>
 
       <template #row-details="row">
         <b-card>
           <ul>
-            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
+            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li> 
           </ul>
         </b-card>
       </template>
     </b-table>
-                     
+     <hr>
+  <!-- Review Records-->
+       <label for=""><b>Review Records</b></label>                
+      <b-table  responsive 
+      :items="review_record"
+      :fields="fields_review"
+      :current-page="currentPage"
+      :per-page="perPage"
+      :filter="filter"
+      :filter-included-fields="filterOn"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
+      :sort-direction="sortDirection"
+      stacked="md"
+      show-empty
+      small
+     
+      flex 
+      striped 
+      hover
+     
+    >
+     <template #cell(index)="data">
+        {{ data.index + 1 }}
+      </template>
+      <template #cell(item)="row">
+        {{ row.value.name }} {{ row.value.icno }} {{ row.value.email }} {{ row.value.roles}}
+      </template>
+
+      <template #cell(edit)="row">
+       <router-link :to="{name: 'admissionform', params:{id:row.item.id}}" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i></router-link> <br>
+        
+         
+       
     
+      </template>
+
+      <template #row-details="row">
+        <b-card>
+          <ul>
+            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li> 
+          </ul>
+        </b-card>
+      </template>
+    </b-table>
    </b-modal>
  
 <!--end View Modal-->
@@ -595,8 +638,15 @@
         fields_admission: [
           { key: 'pkrc', label: 'PKRC', sortable: true, sortDirection: 'desc' },
           { key: 'reg_number', label: 'RN', sortable: true, sortDirection: 'desc' },
-         { key: 'date', label: 'Tarikh Kemasukan', sortable: true, sortDirection: 'desc' },
-           { key: 'actions', label: 'Actions' },
+          { key: 'date', label: 'Tarikh Kemasukan', sortable: true, sortDirection: 'desc' },
+           { key: 'edit', label: 'Actions' },
+           ],
+
+          review_records: [],
+          fields_review: [
+          { key: 'date_review', label: 'Date Review', sortable: true, sortDirection: 'desc' },
+          { key: 'reviewing_mo', label: 'MO', sortable: true, sortDirection: 'desc' },
+           { key: 'view', label: 'Actions' },
            ],
       }
  
@@ -747,10 +797,17 @@
         axios.get('/api/admissions/'+record.id)
   	    .then(function (response) {
         self.views = response.data[0];
+        self.admission_record = response.data;
+        })
+         
+        axios.get('/api/reviewbyrn/'+record.reg_number)
+  	    .then(function (response) {
+        self.review_records = response.data;
         })
         this.$refs['view-modal'].toggle('#toggle-btn')
    
   },
+   
 
  },
   }   

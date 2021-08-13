@@ -28,6 +28,7 @@ let vaccine= require('./components/settings/vaccine.vue').default;
 
 //pkrc component
 let admission= require('./components/pkrc/admission.vue').default;
+let admissionform= require('./components/pkrc/admissionform.vue').default;
 let pkrclist= require('./components/pkrc/index.vue').default;
 let discharge= require('./components/pkrc/discharge.vue').default;
 let dischargeform= require('./components/pkrc/dischargeform.vue').default;
@@ -86,6 +87,7 @@ export const routes = [
     { path: '/discharge', component: discharge, name:'discharge' },
     { path: '/dischargeform', component: dischargeform, name:'dischargeform' },
     { path: '/vital', component: vital, name:'vital' },
+    { path: '/admissionform', component: admissionform, name:'admissionform' },
 
 
     //finance routes

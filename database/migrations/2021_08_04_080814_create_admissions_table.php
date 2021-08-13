@@ -28,7 +28,6 @@ class CreateAdmissionsTable extends Migration
             $table->string('time');
             $table->string('weight')->nullable();
             $table->string('note')->nullable();
-            $table->string('date_dc')->nullable();
             $table->timestamps();
         });
     }
