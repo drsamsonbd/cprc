@@ -36,13 +36,13 @@
                       <b-row>
                             <b-col>
                       <label>Tarikh </label>
-                      <input type="date" class="form-control" id="date" v-model="form.date" >
-                         <small class="text-danger" v-if="errors.date">{{errors.date[0]}}</small>
+                      <input type="date" class="form-control" id="date" v-model="form.date_review" >
+                         <small class="text-danger" v-if="errors.date_review">{{errors.date_review[0]}}</small>
                    </b-col>
                      <b-col>
                         <label>Masa </label>
-                      <input type="time" class="form-control" id="time" v-model="form.time">
-                         <small class="text-danger" v-if="errors.time">{{errors.time[0]}}</small>
+                      <input type="time" class="form-control" id="time" v-model="form.time_review">
+                         <small class="text-danger" v-if="errors.time-review">{{errors.time_review[0]}}</small>
                    </b-col>
                       </b-row>
                       <b-row>
@@ -275,8 +275,8 @@ import Header from '../container/Header.vue';
           form:{
           reg_number : null,
           kp_passport : null,
-          date : null,
-          time : null,
+          date_review : null,
+          time_review : null,
           diagnosis : null,
           warning_sign : [],
           temp : null,

@@ -642,7 +642,7 @@
            { key: 'edit', label: 'Actions' },
            ],
 
-          review_records: [],
+          review_record: [],
           fields_review: [
           { key: 'date_review', label: 'Date Review', sortable: true, sortDirection: 'desc' },
           { key: 'reviewing_mo', label: 'MO', sortable: true, sortDirection: 'desc' },
@@ -798,11 +798,11 @@
   	    .then(function (response) {
         self.views = response.data[0];
         self.admission_record = response.data;
-        })
+        });
          
         axios.get('/api/reviewbyrn/'+record.reg_number)
   	    .then(function (response) {
-        self.review_records = response.data;
+        self.review_record = response.data;
         })
         this.$refs['view-modal'].toggle('#toggle-btn')
    
