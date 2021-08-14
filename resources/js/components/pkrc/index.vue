@@ -427,7 +427,7 @@
         {{ row.value.name }} {{ row.value.icno }} {{ row.value.email }} {{ row.value.roles}}
       </template>
 
-      <template #cell(edit)="row">
+      <template #cell(edit_discharge)="row">
        <router-link :to="{name: 'admissionform', params:{id:row.item.id}}" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i></router-link> <br>
         
          
@@ -443,7 +443,54 @@
         </b-card>
       </template>
     </b-table>
+
+   <!-- Discharge Records-->
+       <label for=""><b>Discharge </b></label>                
+      <b-table  responsive 
+      :items="discharge_record"
+      :fields="fields_discharge"
+      :current-page="currentPage"
+      :per-page="perPage"
+      :filter="filter"
+      :filter-included-fields="filterOn"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
+      :sort-direction="sortDirection"
+      stacked="md"
+      show-empty
+      small
+     
+      flex 
+      striped 
+      hover
+     
+    >
+     <template #cell(index)="data">
+        {{ data.index + 1 }}
+      </template>
+      <template #cell(item)="row">
+        {{ row.value.name }} {{ row.value.icno }} {{ row.value.email }} {{ row.value.roles}}
+      </template>
+
+      <template #cell(edit_discharge)="row">
+       <router-link :to="{name: 'dischargeupdate', params:{id:row.item.id}}" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i></router-link> <br>
+        
+         
+       
+    
+      </template>
+
+      <template #row-details="row">
+        <b-card>
+          <ul>
+            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li> 
+          </ul>
+        </b-card>
+      </template>
+    </b-table>
    </b-modal>
+
+
  
 <!--end View Modal-->
 
@@ -641,7 +688,13 @@
           { key: 'date', label: 'Tarikh Kemasukan', sortable: true, sortDirection: 'desc' },
            { key: 'edit', label: 'Actions' },
            ],
-
+        discharge_record: [],
+        fields_discharge: [
+          { key: 'id', label: 'Date', sortable: true, sortDirection: 'desc' },
+          { key: 'date_dc', label: 'Date', sortable: true, sortDirection: 'desc' },
+          { key: 'type_dc', label: 'Jenis Discharge', sortable: true, sortDirection: 'desc' },
+           { key: 'edit_discharge', label: 'Actions' },
+           ],
           review_record: [],
           fields_review: [
           { key: 'date_review', label: 'Date Review', sortable: true, sortDirection: 'desc' },
@@ -798,12 +851,11 @@
   	    .then(function (response) {
         self.views = response.data[0];
         self.admission_record = response.data;
+        self.review_record = response.data;
+        self.discharge_record = response.data;
         });
          
-        axios.get('/api/reviewbyrn/'+record.reg_number)
-  	    .then(function (response) {
-        self.review_record = response.data;
-        })
+  
         this.$refs['view-modal'].toggle('#toggle-btn')
    
   },
