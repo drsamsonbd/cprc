@@ -491,7 +491,7 @@
           { key: 'year', label: 'Tahun', sortable: true, sortDirection: 'desc' },
           { key: 'epid_week', label: 'Minggu Epid', sortable: true, sortDirection: 'desc' },
           { key: 'cumulative', label: 'Bil', sortable: true, sortDirection: 'desc' },
-          { key: 'date_report_KKM', label: 'Taikh Daftar KKM', sortable: true, sortDirection: 'desc' },
+          { key: 'date_report_KKM', label: 'Tarikh Daftar KKM', sortable: true, sortDirection: 'desc' },
           { key: 'district', label: 'Daerah Daftar', sortable: true, sortDirection: 'desc' },
           { key: 'locality', label: 'Lokaliti', sortable: true, sortDirection: 'desc' },
           { key: 'treating_hospital', label: 'Hospital Merawat', sortable: true, sortDirection: 'desc' },
