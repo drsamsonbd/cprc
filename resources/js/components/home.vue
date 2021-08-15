@@ -7,6 +7,8 @@
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
           </div>
+
+
   <div class="row mb-3">
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -87,43 +89,11 @@
             </div>-->
             
 </div>
+ <div class="container" id="app">
+       <admission-chart-component></admission-chart-component>
 
-    <div
-      class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
-    >
-      <chart-card
-        :chart-data="emailsSubscriptionChart.data"
-        :chart-options="emailsSubscriptionChart.options"
-        :chart-responsive-options="emailsSubscriptionChart.responsiveOptions"
-        chart-type="Bar"
-        chart-inside-header
-        background-color="rose"
-      >
-        <md-icon slot="fixed-button">build</md-icon>
-        <md-button class="md-simple md-info md-just-icon" slot="first-button">
-          <md-icon>refresh</md-icon>
-          <md-tooltip md-direction="bottom">Refresh</md-tooltip>
-        </md-button>
-        <md-button class="md-simple md-just-icon" slot="second-button">
-          <md-icon>edit</md-icon>
-          <md-tooltip md-direction="bottom">Change Date</md-tooltip>
-        </md-button>
-
-        <template slot="content">
-          <h4 class="title">Website Views</h4>
-          <p class="category">
-            Last Campaign Performance
-          </p>
-        </template>
-
-        <template slot="footer">
-          <div class="stats">
-            <md-icon>access_time</md-icon>
-            updated 10 days ago
-          </div>
-        </template>
-      </chart-card>
-    </div>
+   </div>
+   
   <!--viewModal-->
   <div>
   <b-modal ref="view-modal" size="xl" hide-footer title="Data Harian PKRC">     
@@ -367,6 +337,8 @@
 </template>
 
 <script type="text/javascript">
+//Vue.component('admission-chart-component', require('./components/admissionrecordChart.vue'));
+
 export default{
   created(){
     if(!User.loggedIn()){
@@ -442,52 +414,6 @@ export default{
     },   
 
 
-
-        emailsSubscriptionChart: {
-        data: {
-          labels: [
-            "Ja",
-            "Fe",
-            "Ma",
-            "Ap",
-            "Mai",
-            "Ju",
-            "Jul",
-            "Au",
-            "Se",
-            "Oc",
-            "No",
-            "De"
-          ],
-          series: [[542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]]
-        },
-        options: {
-          axisX: {
-            showGrid: false
-          },
-          low: 0,
-          high: 1000,
-          chartPadding: {
-            top: 0,
-            right: 5,
-            bottom: 0,
-            left: 0
-          }
-        },
-        responsiveOptions: [
-          [
-            "screen and (max-width: 640px)",
-            {
-              seriesBarDistance: 5,
-              axisX: {
-                labelInterpolationFnc: function(value) {
-                  return value[0];
-                }
-              }
-            }
-          ]
-        ]
-      },
      computed:{
       filtersearch(){
       return this.users.filter(user => {

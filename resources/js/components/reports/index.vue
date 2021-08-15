@@ -9,7 +9,7 @@
    <div class="col-lg-12 ">
    
 
-    <b-modal ref="my-modal" size="xl" hide-footer title="Daftar Pesakit">
+    <b-modal ref="my-modal" size="xl" hide-footer title="Laporan PKRC">
     
            <form class="user" @submit.prevent="register">
                   
@@ -33,84 +33,244 @@
                         </select>
                    </b-col>
                      </b-row>
-                           <br>  
-                    <b-row>
-                      <h5>Pesakit Dewasa</h5>
-                      <b-col>
-                      <label>Lelaki</label>
-                      <input type="number" class="form-control" id="male" v-model="form.male">
+                           <br>  <hr>
+                            <h6><b>Bilangan Pesakit</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dewasa Lelaki </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="form.male">
+      
                          <small class="text-danger" v-if="errors.male">{{errors.male[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Perempuan</label>
-                      <input type="number" class="form-control" id="female" v-model="form.female">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Dewasa Perempuan </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="form.female" >
+      
                          <small class="text-danger" v-if="errors.female">{{errors.female[0]}}</small>
-                  </b-col>                
-                    </b-row>
-                  <br>
-                   <b-row>
-                      <h5>Pesakit Kanak-kanak</h5>
-                      <b-col>
-                      <label>Lelaki</label>
-                      <input type="number" class="form-control" id="pmale" v-model="form.paeds_male">
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kanak-kanak Lelaki </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="form.paeds_male">
                          <small class="text-danger" v-if="errors.paeds_male">{{errors.paeds_male[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Perempuan</label>
-                      <input type="number" class="form-control" id="pfemale" v-model="form.paeds_female">
+      
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Kanak-kanak Perempuan </b></label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="form.paeds_female">
                          <small class="text-danger" v-if="errors.paeds_female">{{errors.paeds_female[0]}}</small>
-                  </b-col>                
-                    </b-row>
-                    <br>
-  
-                               <b-row>
-                                  <h5>Staging</h5>
-                       <b-col>
-                      <label>Stage 1</label>
-                      <input type="number" class="form-control" id="s1" v-model="form.stage_1">
+      
+    </div>
+  </div>
+                   
+       <hr>
+                            <h6><b>Staging</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Stage 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_1">
                          <small class="text-danger" v-if="errors.stage_1">{{errors.stage_1[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Stage 2</label>
-                      <input type="number" class="form-control" id="s2" v-model="form.stage_2">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Stage 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_2">
                          <small class="text-danger" v-if="errors.stage_2">{{errors.stage_2[0]}}</small>
-                  </b-col>                
-                    </b-row>
-                    <br>
-                        
-                  <b-row>
-                       <b-col>
-                      <label>Jumlah Warganegara</label>
-                      <input type="number" class="form-control" id="local" v-model="form.local">
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Stage 3 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_3">
+                         <small class="text-danger" v-if="errors.stage_3">{{errors.stage_3[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Stage 4</b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_4">
+                         <small class="text-danger" v-if="errors.stage_4">{{errors.stage_4[0]}}</small>
+    </div>
+  </div>
+  
+<hr>
+    <h6><b>Bilangan kes</b></h6>
+                           <div class="form-group row">
+     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kemasukan Baru </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.new_admission">
+                         <small class="text-danger" v-if="errors.new_admission">{{errors.new_admission[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm"> <code>*</code> <b>Step Up </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.step_up">
+                         <small class="text-danger" v-if="errors.step_up">{{errors.step_up[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm"><code>*</code> <b> Discaj </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.discharged">
+                         <small class="text-danger" v-if="errors.discharged">{{errors.discharged[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm"> <code>*</code> <b>Home Quarantine </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.home_q">
+                         <small class="text-danger" v-if="errors.home_q">{{errors.home_q[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm"><code>*</code> <b>Pending Admission</b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.pending">
+                         <small class="text-danger" v-if="errors.pending">{{errors.pending[0]}}</small>
+    </div>
+  </div>
+
+    <h6><b>Jumlah</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Warganegara </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.local">
                          <small class="text-danger" v-if="errors.local">{{errors.local[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Jumlah BWN</label>
-                      <input type="number" class="form-control" id="non_local" v-model="form.non_local">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> BWN </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.non_local">
                          <small class="text-danger" v-if="errors.non_local">{{errors.non_local[0]}}</small>
-                  </b-col>     
-                       <b-col>
-                    <label>BOR</label>
-                      <input type="text" class="form-control" id="bor" v-model="form.bor">
-                         <small class="text-danger" v-if="errors.bor">{{errors.bor[0]}}</small>
-                  </b-col>            
-                    </b-row>
-                    <br>
-                   <b-row>
-                       <b-col>
-                      <label>Bilangan Penjaga</label>
-                      <input type="number" class="form-control" id="carer" v-model="form.carer">
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Penjaga </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.carer">
                          <small class="text-danger" v-if="errors.carer">{{errors.carer[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Bilangan Staf</label>
-                      <input type="number" class="form-control" id="staff" v-model="form.staff">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>BOR</b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.bor">
+                         <small class="text-danger" v-if="errors.bor">{{errors.bor[0]}}</small>
+    </div>
+  </div>
+ <hr>
+  <h6><b><u>Bilangan Pesakit Menerima Vaksin </u></b></h6>
+                     <h6> Pesakit Stage 1</h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dos 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_1_1">
+                         <small class="text-danger" v-if="errors.stage_1_1">{{errors.stage_1_1[0]}}</small>
+    </div> <div class="col-sm-1">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Dos 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_1_2">
+                         <small class="text-danger" v-if="errors.stage_1_2">{{errors.stage_1_2[0]}}</small>
+    </div>
+       
+  </div>        
+
+              <h6> Pesakit Stage 2</h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dos 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_2_1">
+                         <small class="text-danger" v-if="errors.stage_2_1">{{errors.stage_2_1[0]}}</small>
+    </div> <div class="col-sm-1">
+    </div>
+
+   
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Dos 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_2_2">
+                         <small class="text-danger" v-if="errors.stage_2_2">{{errors.stage_2_2[0]}}</small>
+    </div>
+       
+  </div>        
+                    <h6> Pesakit Stage 3</h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dos 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_3_1">
+                         <small class="text-danger" v-if="errors.stage_3_1">{{errors.stage_3_1[0]}}</small>
+    </div> <div class="col-sm-1">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Dos 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_3_2">
+                         <small class="text-danger" v-if="errors.stage_3_2">{{errors.stage_3_2[0]}}</small>
+    </div>
+       
+  </div>    
+   <h6> Pesakit Stage 4</h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dos 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_4_1">
+                         <small class="text-danger" v-if="errors.stage_4_1">{{errors.stage_4_1[0]}}</small>
+    </div> <div class="col-sm-1">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Dos 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="form.stage_4_2">
+                         <small class="text-danger" v-if="errors.stage_4_2">{{errors.stage_4_2[0]}}</small>
+    </div>
+       
+  </div>   
+
+  <hr>
+                            <h6><b>Pesakit PUI</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dewasa Lelaki </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="form.pui_adult_male">
+      
+                         <small class="text-danger" v-if="errors.pui_adult_male">{{errors.pui_adult_male[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Dewasa Perempuan </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="form.pui_adult_female" >
+      
+                         <small class="text-danger" v-if="errors.pui_adult_female">{{errors.pui_adult_female[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kanak-kanak Lelaki </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="form.pui_paeds_male">
+                         <small class="text-danger" v-if="errors.pui_paeds_male">{{errors.pui_paeds_male[0]}}</small>
+      
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Kanak-kanak Perempuan </b></label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="form.pui_paeds_female">
+                         <small class="text-danger" v-if="errors.pui_paeds_female">{{errors.pui_paeds_female[0]}}</small>
+      
+    </div>
+  </div> 
+
+                         
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kemasukan Baru </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="form.pui_new">
+      
+                         <small class="text-danger" v-if="errors.pui_new">{{errors.pui_new[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Discaj </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="form.pui_discharged" >
+      
+                         <small class="text-danger" v-if="errors.pui_discharged">{{errors.pui_discharged[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kematian </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="form.pui_death">
+                         <small class="text-danger" v-if="errors.pui_death">{{errors.pui_death[0]}}</small>
+      
+    </div>
+
+  </div> 
+<hr>
+               <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"> <code>*</code> <b>Bilangan Staf Bertugas </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="form.staff">
+      
                          <small class="text-danger" v-if="errors.staff">{{errors.staff[0]}}</small>
-                  </b-col>                
-                   </b-row>
+    </div>
+   
+
+  </div> <hr>
               
                     <div class="form-group">
-                      <label>Nota</label>
+                      <label> <code>*</code>Nota</label>
                       <textarea input type="text" class="form-control" id="notes" v-model="form.notes"></textarea>
                          <small class="text-danger" v-if="errors.notes">{{errors.notes[0]}}</small>
                     </div>
@@ -126,7 +286,7 @@
   
   <!--userUpdate Modal-->
   <div>
-  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Pesakit">     
+  <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Laporan">     
           <form class="user" @submit.prevent="patientUpdate"> 
                     <div class="form-group" hidden>
                       <label>ID:</label>
@@ -134,7 +294,7 @@
                      
                     </div>  
                  
-                             <b-row>
+                      <b-row>
                         <b-col>
                       <label>Tarikh</label>
                       <input type="date" class="form-control" id="date" v-model="forms.date">
@@ -154,94 +314,256 @@
                         </select>
                    </b-col>
                      </b-row>
-                           <br>  
-                    <b-row>
-                      <h5>Pesakit Dewasa</h5>
-                      <b-col>
-                      <label>Lelaki</label>
-                      <input type="number" class="form-control" id="male" v-model="forms.male">
+                           <br>  <hr>
+                            <h6><b>Bilangan Pesakit</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dewasa Lelaki </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="forms.male">
+      
                          <small class="text-danger" v-if="errors.male">{{errors.male[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Perempuan</label>
-                      <input type="number" class="form-control" id="female" v-model="forms.female">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Dewasa Perempuan </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="forms.female" >
+      
                          <small class="text-danger" v-if="errors.female">{{errors.female[0]}}</small>
-                  </b-col>                
-                    </b-row>
-                  <br>
-                   <b-row>
-                      <h5>Pesakit Kanak-kanak</h5>
-                      <b-col>
-                      <label>Lelaki</label>
-                      <input type="number" class="form-control" id="pmale" v-model="forms.paeds_male">
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kanak-kanak Lelaki </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="forms.paeds_male">
                          <small class="text-danger" v-if="errors.paeds_male">{{errors.paeds_male[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Perempuan</label>
-                      <input type="number" class="form-control" id="pfemale" v-model="forms.paeds_female">
+      
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Kanak-kanak Perempuan </b></label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="forms.paeds_female">
                          <small class="text-danger" v-if="errors.paeds_female">{{errors.paeds_female[0]}}</small>
-                  </b-col>                
-                    </b-row>
-                    <br>
-  
-                               <b-row>
-                                  <h5>Staging</h5>
-                       <b-col>
-                      <label>Stage 1</label>
-                      <input type="number" class="form-control" id="s1" v-model="forms.stage_1">
+      
+    </div>
+  </div>
+                   
+       <hr>
+                            <h6><b>Staging</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Stage 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_1">
                          <small class="text-danger" v-if="errors.stage_1">{{errors.stage_1[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Stage 2</label>
-                      <input type="number" class="form-control" id="s2" v-model="forms.stage_2">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Stage 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_2">
                          <small class="text-danger" v-if="errors.stage_2">{{errors.stage_2[0]}}</small>
-                  </b-col>                
-                    </b-row>
-                    <br>
-                        
-                  <b-row>
-                       <b-col>
-                      <label>Jumlah Warganegara</label>
-                      <input type="number" class="form-control" id="local" v-model="forms.local">
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Stage 3 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_3">
+                         <small class="text-danger" v-if="errors.stage_3">{{errors.stage_3[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Stage 4</b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_4">
+                         <small class="text-danger" v-if="errors.stage_4">{{errors.stage_4[0]}}</small>
+    </div>
+  </div>
+  
+<hr>
+    <h6><b>Bilangan kes</b></h6>
+                           <div class="form-group row">
+     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kemasukan Baru </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.new_admission">
+                         <small class="text-danger" v-if="errors.new_admission">{{errors.new_admission[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm"> <code>*</code> <b>Step Up </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.step_up">
+                         <small class="text-danger" v-if="errors.step_up">{{errors.step_up[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm"><code>*</code> <b> Discaj </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.discharged">
+                         <small class="text-danger" v-if="errors.discharged">{{errors.discharged[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm"> <code>*</code> <b>Home Quarantine </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.home_q">
+                         <small class="text-danger" v-if="errors.home_q">{{errors.home_q[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm"><code>*</code> <b>Pending Admission</b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.pending">
+                         <small class="text-danger" v-if="errors.pending">{{errors.pending[0]}}</small>
+    </div>
+  </div>
+
+    <h6><b>Jumlah</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Warganegara </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.local">
                          <small class="text-danger" v-if="errors.local">{{errors.local[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Jumlah BWN</label>
-                      <input type="number" class="form-control" id="non_local" v-model="forms.non_local">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> BWN </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.non_local">
                          <small class="text-danger" v-if="errors.non_local">{{errors.non_local[0]}}</small>
-                  </b-col>     
-                       <b-col>
-                    <label>BOR</label>
-                      <input type="text" class="form-control" id="bor" v-model="forms.bor">
-                         <small class="text-danger" v-if="errors.bor">{{errors.bor[0]}}</small>
-                  </b-col>            
-                    </b-row>
-                    <br>
-                   <b-row>
-                       <b-col>
-                      <label>Bilangan Penjaga</label>
-                      <input type="number" class="form-control" id="carer" v-model="forms.carer">
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Penjaga </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.carer">
                          <small class="text-danger" v-if="errors.carer">{{errors.carer[0]}}</small>
-                  </b-col>
-                   <b-col>
-                    <label>Bilangan Staf</label>
-                      <input type="number" class="form-control" id="staff" v-model="forms.staff">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>BOR</b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.bor">
+                         <small class="text-danger" v-if="errors.bor">{{errors.bor[0]}}</small>
+    </div>
+  </div>
+ <hr>
+  <h6><b><u>Bilangan Pesakit Menerima Vaksin </u></b></h6>
+                     <h6> Pesakit Stage 1</h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dos 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_1_1">
+                         <small class="text-danger" v-if="errors.stage_1_1">{{errors.stage_1_1[0]}}</small>
+    </div> <div class="col-sm-1">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Dos 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_1_2">
+                         <small class="text-danger" v-if="errors.stage_1_2">{{errors.stage_1_2[0]}}</small>
+    </div>
+       
+  </div>        
+
+              <h6> Pesakit Stage 2</h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dos 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_2_1">
+                         <small class="text-danger" v-if="errors.stage_2_1">{{errors.stage_2_1[0]}}</small>
+    </div> <div class="col-sm-1">
+    </div>
+
+   
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Dos 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_2_2">
+                         <small class="text-danger" v-if="errors.stage_2_2">{{errors.stage_2_2[0]}}</small>
+    </div>
+       
+  </div>        
+                    <h6> Pesakit Stage 3</h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dos 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_3_1">
+                         <small class="text-danger" v-if="errors.stage_3_1">{{errors.stage_3_1[0]}}</small>
+    </div> <div class="col-sm-1">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Dos 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_3_2">
+                         <small class="text-danger" v-if="errors.stage_3_2">{{errors.stage_3_2[0]}}</small>
+    </div>
+       
+  </div>    
+   <h6> Pesakit Stage 4</h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dos 1 </b> </label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_4_1">
+                         <small class="text-danger" v-if="errors.stage_4_1">{{errors.stage_4_1[0]}}</small>
+    </div> <div class="col-sm-1">
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b> Dos 2 </b></label>
+    <div class="col-sm-1">
+   <input type="number" class="form-control form-control-sm" id="s1" v-model="forms.stage_4_2">
+                         <small class="text-danger" v-if="errors.stage_4_2">{{errors.stage_4_2[0]}}</small>
+    </div>
+       
+  </div>   
+
+  <hr>
+                            <h6><b>Pesakit PUI</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dewasa Lelaki </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="forms.pui_adult_male">
+      
+                         <small class="text-danger" v-if="errors.pui_adult_male">{{errors.pui_adult_male[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Dewasa Perempuan </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="forms.pui_adult_female" >
+      
+                         <small class="text-danger" v-if="errors.pui_adult_female">{{errors.pui_adult_female[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kanak-kanak Lelaki </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="forms.pui_paeds_male">
+                         <small class="text-danger" v-if="errors.pui_paeds_male">{{errors.pui_paeds_male[0]}}</small>
+      
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Kanak-kanak Perempuan </b></label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="forms.pui_paeds_female">
+                         <small class="text-danger" v-if="errors.pui_paeds_female">{{errors.pui_paeds_female[0]}}</small>
+      
+    </div>
+  </div> 
+
+                         
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kemasukan Baru </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="forms.pui_new">
+      
+                         <small class="text-danger" v-if="errors.pui_new">{{errors.pui_new[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Discaj </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="forms.pui_discharged" >
+      
+                         <small class="text-danger" v-if="errors.pui_discharged">{{errors.pui_discharged[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kematian </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="forms.pui_death">
+                         <small class="text-danger" v-if="errors.pui_death">{{errors.pui_death[0]}}</small>
+      
+    </div>
+
+  </div> 
+<hr>
+               <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"> <code>*</code> <b>Bilangan Staf Bertugas </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="forms.staff">
+      
                          <small class="text-danger" v-if="errors.staff">{{errors.staff[0]}}</small>
-                  </b-col>                
-                   </b-row>
+    </div>
+   
+
+  </div> <hr>
               
                     <div class="form-group">
-                      <label>Nota</label>
+                      <label> <code>*</code>Nota</label>
                       <textarea input type="text" class="form-control" id="notes" v-model="forms.notes"></textarea>
                          <small class="text-danger" v-if="errors.notes">{{errors.notes[0]}}</small>
                     </div>
                     <div class="form-group">
-                      <button type="submit"  class="btn btn-primary btn-block">Kemaskini</button>
+                      <button type="submit"  class="btn btn-primary btn-block">Hantar</button>
                     </div>
                     <hr>
                  
-                  </form> 
-   </b-modal>
+                  </form>            
+               
+          
+      </b-modal>
    </div>
 <!--userUpdate Modal-->
   
@@ -536,37 +858,89 @@ import Header from '../container/Header.vue';
           pkrcs:[],
           areas:[], 
           form:{
-          date: null,
-          time: null,
-          pkrc: null,
-          male: null,          
-          female: null,
-          paeds_male: null,
-          paeds_female: null,
-          carer: null,
-          non_local: null,
-          bor: null,
-          stage_1: null,
-          stage_2: null,
-          staff: null,
-          notes: null,
+date: null, 
+time: null, 
+pkrc: null, 
+male: null, 
+female: null, 
+paeds_male: null, 
+paeds_female: null, 
+new_adm: null, 
+step_up: null, 
+discharged: null, 
+home_q: null, 
+pending: null, 
+carer: null, 
+local: null, 
+non_local: null, 
+bor: null, 
+stage_1: null, 
+stage_2: null, 
+stage_3: null, 
+stage_4: null, 
+stage_5: null, 
+stage_1_1: null, 
+stage_1_2: null, 
+stage_2_1: null, 
+stage_2_2: null, 
+stage_3_1: null, 
+stage_3_2: null, 
+stage_4_1: null, 
+stage_4_2: null, 
+stage_5_1: null, 
+stage_5_2: null, 
+staff: null, 
+pui_adult_male: null, 
+pui_adult_female: null, 
+pui_paeds_male: null, 
+pui_paeds_female: null, 
+pui_new: null, 
+pui_discharged: null, 
+pui_death: null, 
+notes: null, 
           
         },
           forms:{
-          date: null,
-          time: null,
-          pkrc: null,
-          male: null,          
-          female: null,
-          paeds_male: null,
-          paeds_female: null,
-          carer: null,
-          non_local: null,
-          bor: null,
-          stage_1: null,
-          stage_2: null,
-          staff: null,
-          notes: null,
+     date: null, 
+time: null, 
+pkrc: null, 
+male: null, 
+female: null, 
+paeds_male: null, 
+paeds_female: null, 
+new_adm: null, 
+step_up: null, 
+discharged: null, 
+home_q: null, 
+pending: null, 
+carer: null, 
+local: null, 
+non_local: null, 
+bor: null, 
+stage_1: null, 
+stage_2: null, 
+stage_3: null, 
+stage_4: null, 
+stage_5: null, 
+stage_1_1: null, 
+stage_1_2: null, 
+stage_2_1: null, 
+stage_2_2: null, 
+stage_3_1: null, 
+stage_3_2: null, 
+stage_4_1: null, 
+stage_4_2: null, 
+stage_5_1: null, 
+stage_5_2: null, 
+staff: null, 
+pui_adult_male: null, 
+pui_adult_female: null, 
+pui_paeds_male: null, 
+pui_paeds_female: null, 
+pui_new: null, 
+pui_discharged: null, 
+pui_death: null, 
+notes: null, 
       
         },
         formr:{

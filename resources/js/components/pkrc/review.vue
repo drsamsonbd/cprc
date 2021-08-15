@@ -203,6 +203,18 @@ import Header from '../container/Header.vue';
          
 
   export default {
+
+         mounted(){
+      let roles = localStorage.getItem('roles');
+       if(roles.toLowerCase().indexOf("medical")===-1){
+      this.$router.push({name: 'home'})
+      Notification.mo()
+      
+  
+    }
+
+
+      },
        methods:{
          cases(){      
         axios.get('/api/admissions/'+this.$route.params.id)
@@ -251,17 +263,7 @@ import Header from '../container/Header.vue';
   
 
    
-     mounted(){
-     let roles = localStorage.getItem('roles');
-      if(roles.includes("user")-1){
-      this.$router.push({name: 'home'})
-      Notification.unauthorized()
-      
-  
-    }
 
-
-      },
 
       
      data(){

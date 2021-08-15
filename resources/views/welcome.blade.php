@@ -112,7 +112,12 @@
         <div id="collapseBootstrap5" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
            
-          <router-link class="collapse-item" to="/dailyreport">Harian</router-link>  <!--      <router-link class="collapse-item" to="/category">Kategori</router-link>-->
+          <router-link class="collapse-item" to="/dailyreport">PKRC</router-link>
+          <router-link class="collapse-item" to="/nursing">Nursing Report</router-link>
+          <router-link class="collapse-item" to="/nursing">Vaccination</router-link>
+          <router-link class="collapse-item" to="/nursing">PPE</router-link>
+          
+          
           <!--  <router-link class="collapse-item" to="/itemsetting">Tetapan</router-link>-->
           </div>
         </div>
