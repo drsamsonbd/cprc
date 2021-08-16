@@ -43,6 +43,7 @@ let code = require('./components/finance/category.vue').default;
 //report component
 let dailyreport = require('./components/reports/index.vue').default;
 let itemSetting = require('./components/items/setting.vue').default;
+let nursingreport = require('./components/reports/nursing.vue').default;
 
 //profile component
 let profile = require('./components/user/Profile.vue').default;
@@ -99,7 +100,7 @@ export const routes = [
      //reports routes
      { path: '/dailyreport', component: dailyreport, name:'dailyreport' },
      { path: '/itemsetting', component: itemSetting, name:'itemSetting' },
-
+     { path: '/nursingreport', component: nursingreport, name:'nursingreport' },
 
      //profile routes
      { path: '/profile', component: profile, name:'profile' },

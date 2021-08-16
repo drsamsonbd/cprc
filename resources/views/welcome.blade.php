@@ -4,9 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link href="{{asset('asset/img/logo/hblnlogov2.png')}}" rel="icon">
   <title>Covid Management| Hospital Beluran</title>
   <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
@@ -113,7 +112,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
            
           <router-link class="collapse-item" to="/dailyreport">PKRC</router-link>
-          <router-link class="collapse-item" to="/nursing">Nursing Report</router-link>
+          <router-link class="collapse-item" to="/nursingreport">Nursing Report</router-link>
           <router-link class="collapse-item" to="/nursing">Vaccination</router-link>
           <router-link class="collapse-item" to="/nursing">PPE</router-link>
           
@@ -457,16 +456,14 @@
     }
     else if(roles.includes("kesihatan")){
       $("#patient").css("display",""); 
-      $("#settings").css("display",""); 
-      
+      $("#settings").css("display","");       
       $("#statistics").css("display",""); 
     }  
     else if(roles.includes("hospital")){
       $("#patient").css("display",""); 
       $("#settings").css("display",""); 
       $("#reports").css("display",""); 
-      $("#pkrc").css("display",""); 
-      
+      $("#pkrc").css("display","");       
       $("#statistics").css("display",""); 
  
  }  
