@@ -686,6 +686,7 @@
           { key: 'pkrc', label: 'PKRC', sortable: true, sortDirection: 'desc' },
           { key: 'reg_number', label: 'RN', sortable: true, sortDirection: 'desc' },
           { key: 'date', label: 'Tarikh Kemasukan', sortable: true, sortDirection: 'desc' },
+            { key: 'time', label: 'Masa Kemasukan', sortable: true, sortDirection: 'desc' },
            { key: 'edit', label: 'Actions' },
            ],
         discharge_record: [],
