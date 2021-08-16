@@ -18,6 +18,7 @@ class AdmissionRecordController extends Controller
        ->select('patients.name','patients.kp_passport','patients.gender','patients.age','patients.job','patients.address','admissions.*','discharges.date_dc', 
        'discharges.duration', 'discharges.type_dc', 'discharges.notes','reviews.date_review'
        ,'reviews.reviewing_mo')
+       ->where('admissions.pkrc','=','Dewan Kelab Belia Sukan')
        ->orderBy('admissions.reg_number','desc')
        ->get()
        ;
