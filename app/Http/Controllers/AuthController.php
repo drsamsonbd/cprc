@@ -92,7 +92,7 @@ class AuthController extends Controller
             $data['roles'] = $request->roles;
             DB::table('users')->insert($data);
 
-           
+            return response()->json(['message' => 'Successfully registered']); 
     }
 
     /**

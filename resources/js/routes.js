@@ -44,6 +44,7 @@ let code = require('./components/finance/category.vue').default;
 let dailyreport = require('./components/reports/index.vue').default;
 let itemSetting = require('./components/items/setting.vue').default;
 let nursingreport = require('./components/reports/nursing.vue').default;
+let vaccinationreport = require('./components/reports/vaccination.vue').default;
 
 //profile component
 let profile = require('./components/user/Profile.vue').default;
@@ -101,7 +102,7 @@ export const routes = [
      { path: '/dailyreport', component: dailyreport, name:'dailyreport' },
      { path: '/itemsetting', component: itemSetting, name:'itemSetting' },
      { path: '/nursingreport', component: nursingreport, name:'nursingreport' },
-
+     { path: '/vaccinationreport', component: vaccinationreport, name:'vaccinationreport' },
      //profile routes
      { path: '/profile', component: profile, name:'profile' },
 

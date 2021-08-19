@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
   <link href="{{asset('asset/img/logo/hblnlogov2.png')}}" rel="icon">
   <title>Covid Management| Hospital Beluran</title>
@@ -113,7 +113,7 @@
            
           <router-link class="collapse-item" to="/dailyreport">PKRC</router-link>
           <router-link class="collapse-item" to="/nursingreport">Nursing Report</router-link>
-          <router-link class="collapse-item" to="/nursing">Vaccination</router-link>
+          <router-link class="collapse-item" to="/vaccinationreport">Vaccination</router-link>
           <router-link class="collapse-item" to="/nursing">PPE</router-link>
           
           
@@ -428,7 +428,7 @@
   <script src="{{asset('asset/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('asset/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
   <script src="{{asset('asset/js/ruang-admin.min.js')}}"></script>
-  <script src="{{asset('asset/vendor/chart.js/Chart.min.js')}}"></script>
+  <script src="{{asset('asset/vendor/chart.js/Chart.min.js')}}"></script> 
   <script src="{{asset('asset/js/demo/chart-area-demo.js')}}"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js" integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js.map"></script>
