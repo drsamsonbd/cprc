@@ -381,7 +381,7 @@
 </b-modal>
  <!------------------------------------------------------------------Update Modal-------------------------------------------> 
 
-     <b-modal ref="update-modal" size="xl" hide-footer title="Kemaskini Laporan Kejururawatan">
+     <b-modal ref="edit-modal" size="xl" hide-footer title="Kemaskini Laporan Kejururawatan">
     
            <form class="user" @submit.prevent="patientUpdate">
               <div class="form-group" hidden>
