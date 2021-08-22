@@ -63,7 +63,6 @@ class NursingReport extends Model
     'covid_adult_female',
     'covid_paeds_male',
     'covid_paeds_female',
-    'covid_paeds_female',
     'covid_local',
     'covid_non_local',
 
