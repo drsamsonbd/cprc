@@ -58,6 +58,14 @@ class CreateNursingReportsTable extends Migration
             $table->string('stage_5_1')->nullable();
             $table->string('stage_5_2')->nullable();
             $table->string('staff')->nullable();
+            $table->string('covid_adult_male')->nullable();
+            $table->string('covid_adult_female')->nullable();
+            $table->string('covid_paeds_male')->nullable();
+            $table->string('covid_paeds_female')->nullable();
+            $table->string('covid_paeds_female')->nullable();
+            $table->string('covid_local')->nullable();
+            $table->string('covid_non_local')->nullable();
+
             $table->string('pui_adult_male')->nullable();
             $table->string('pui_adult_female')->nullable();
             $table->string('pui_paeds_male')->nullable();

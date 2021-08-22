@@ -59,6 +59,13 @@ class NursingReport extends Model
     'pui_death',
     'covid_death',
     'notes',
+    'covid_adult_male',
+    'covid_adult_female',
+    'covid_paeds_male',
+    'covid_paeds_female',
+    'covid_paeds_female',
+    'covid_local',
+    'covid_non_local',
 
     ];
 }

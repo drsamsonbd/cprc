@@ -113,7 +113,7 @@
            
           <router-link class="collapse-item" to="/dailyreport">PKRC</router-link>
           <router-link class="collapse-item" to="/nursingreport">Nursing Report</router-link>
-          <router-link class="collapse-item" to="/vaccinationreport">Vaccination</router-link>
+          <router-link class="collapse-item" to="/">Vaccination</router-link>
           <router-link class="collapse-item" to="/nursing">PPE</router-link>
           
           

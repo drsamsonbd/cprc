@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 Route::group(['prefix' => 'admin','middleware' => ['assign.guard:admins','jwt.auth']],function ()
 {
 	Route::post('login', 'AuthController@login');	

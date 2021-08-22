@@ -143,6 +143,8 @@
                          <small class="text-danger" v-if="errors.pending">{{errors.pending[0]}}</small>
     </div>
   </div>
+
+
   <!--Discharged--> <hr>
  <h6><b>Discaj</b></h6>
  <div class="form-group row">
@@ -180,6 +182,50 @@
     </div>
 
   </div> 
+    
+<!-- COVID--> <hr>
+      <h6><b>Pesakit COVID</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dewasa Lelaki </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="form.covid_adult_male">
+      
+                         <small class="text-danger" v-if="errors.covid_adult_male">{{errors.covid_adult_male[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Dewasa Perempuan </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="form.covid_adult_female" >
+      
+                         <small class="text-danger" v-if="errors.covid_adult_female">{{errors.covid_adult_female[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kanak-kanak Lelaki </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="form.covid_paeds_male">
+                         <small class="text-danger" v-if="errors.covid_paeds_male">{{errors.covid_paeds_male[0]}}</small>
+      
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Kanak-kanak Perempuan </b></label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="form.covid_paeds_female">
+                         <small class="text-danger" v-if="errors.covid_paeds_female">{{errors.covid_paeds_female[0]}}</small>
+      
+    </div>
+
+  </div> 
+                             <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Local </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="form.covid_local">
+      
+                         <small class="text-danger" v-if="errors.covid_local">{{errors.covid_local[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Non-local </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="form.covid_nonlocal" >
+      
+                         <small class="text-danger" v-if="errors.covid_nonlocal">{{errors.covid_nonlocal[0]}}</small>
+    </div>
+
 
 <!-- PUI--> <hr>
       <h6><b>Pesakit PUI</b></h6>
@@ -556,6 +602,53 @@
     </div>
 
   </div> 
+
+    
+<!-- COVID--> <hr>
+      <h6><b>Pesakit COVID</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dewasa Lelaki </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="forms.covid_adult_male">
+      
+                         <small class="text-danger" v-if="errors.covid_adult_male">{{errors.covid_adult_male[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Dewasa Perempuan </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="forms.covid_adult_female" >
+      
+                         <small class="text-danger" v-if="errors.covid_adult_female">{{errors.covid_adult_female[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kanak-kanak Lelaki </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="forms.covid_paeds_male">
+                         <small class="text-danger" v-if="errors.covid_paeds_male">{{errors.covid_paeds_male[0]}}</small>
+      
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Kanak-kanak Perempuan </b></label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="forms.covid_paeds_female">
+                         <small class="text-danger" v-if="errors.covid_paeds_female">{{errors.covid_paeds_female[0]}}</small>
+      
+    </div>
+
+  </div> 
+                             <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Local </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="forms.covid_local">
+      
+                         <small class="text-danger" v-if="errors.covid_local">{{errors.covid_local[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Non-local </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="forms.covid_nonlocal" >
+      
+                         <small class="text-danger" v-if="errors.covid_nonlocal">{{errors.covid_nonlocal[0]}}</small>
+    </div>
+
+
+
 
 <!-- PUI--> <hr>
       <h6><b>Pesakit PUI</b></h6>
@@ -934,6 +1027,52 @@
     </div>
 
   </div> 
+
+  
+<!-- COVID--> <hr>
+      <h6><b>Pesakit COVID</b></h6>
+                           <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dewasa Lelaki </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="viewscovid_adult_male">
+      
+                         <small class="text-danger" v-if="errors.covid_adult_male">{{errors.covid_adult_male[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Dewasa Perempuan </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="viewscovid_adult_female" >
+      
+                         <small class="text-danger" v-if="errors.covid_adult_female">{{errors.covid_adult_female[0]}}</small>
+    </div>
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kanak-kanak Lelaki </b> </label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="viewscovid_paeds_male">
+                         <small class="text-danger" v-if="errors.covid_paeds_male">{{errors.covid_paeds_male[0]}}</small>
+      
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Kanak-kanak Perempuan </b></label>
+    <div class="col-sm-1">
+       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="viewscovid_paeds_female">
+                         <small class="text-danger" v-if="errors.covid_paeds_female">{{errors.covid_paeds_female[0]}}</small>
+      
+    </div>
+
+  </div> 
+                             <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Local </b> </label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="viewscovid_local">
+      
+                         <small class="text-danger" v-if="errors.covid_local">{{errors.covid_local[0]}}</small>
+    </div>
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Non-local </b></label>
+    <div class="col-sm-1">
+      <input type="number" class="form-control form-control-sm" id="female" v-model="viewscovid_nonlocal" >
+      
+                         <small class="text-danger" v-if="errors.covid_nonlocal">{{errors.covid_nonlocal[0]}}</small>
+    </div>
+
+
 
 <!-- PUI--> <hr>
       <h6><b>Pesakit PUI</b></h6>
@@ -1350,6 +1489,13 @@ stage_4_2: null,
 stage_5_1: null,
 stage_5_2: null,
 staff: null,
+covid_adult_male: null,
+covid_adult_female: null,
+covid_paeds_male: null,
+covid_paeds_female: null,
+covid_paeds_female: null,
+covid_local: null,
+covid_non_local: null,
 pui_adult_male: null,
 pui_adult_female: null,
 pui_paeds_male: null,
@@ -1405,6 +1551,13 @@ stage_4_2: null,
 stage_5_1: null,
 stage_5_2: null,
 staff: null,
+covid_adult_male: null,
+covid_adult_female: null,
+covid_paeds_male: null,
+covid_paeds_female: null,
+covid_paeds_female: null,
+covid_local: null,
+covid_non_local: null,
 pui_adult_male: null,
 pui_adult_female: null,
 pui_paeds_male: null,
