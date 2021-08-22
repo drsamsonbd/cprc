@@ -225,7 +225,7 @@
       
                          <small class="text-danger" v-if="errors.covid_non_local">{{errors.covid_non_local[0]}}</small>
     </div>
-
+</div>
 
 <!-- PUI--> <hr>
       <h6><b>Pesakit PUI</b></h6>
@@ -647,7 +647,7 @@
                          <small class="text-danger" v-if="errors.covid_non_local">{{errors.covid_non_local[0]}}</small>
     </div>
 
-
+</div>
 
 
 <!-- PUI--> <hr>
@@ -1072,7 +1072,7 @@
                          <small class="text-danger" v-if="errors.covid_non_local">{{errors.covid_non_local[0]}}</small>
     </div>
 
-
+</div>
 
 <!-- PUI--> <hr>
       <h6><b>Pesakit PUI</b></h6>
