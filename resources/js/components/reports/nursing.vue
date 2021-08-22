@@ -1034,25 +1034,25 @@
                            <div class="form-group row">
     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Dewasa Lelaki </b> </label>
     <div class="col-sm-1">
-      <input type="number" class="form-control form-control-sm"  id="male" v-model="views.covid_adult_male">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="views.covid_adult_male" disabled>
       
                          <small class="text-danger" v-if="errors.covid_adult_male">{{errors.covid_adult_male[0]}}</small>
     </div>
     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Dewasa Perempuan </b></label>
     <div class="col-sm-1">
-      <input type="number" class="form-control form-control-sm" id="female" v-model="views.covid_adult_female" >
+      <input type="number" class="form-control form-control-sm" id="female" v-model="views.covid_adult_female" disabled>
       
                          <small class="text-danger" v-if="errors.covid_adult_female">{{errors.covid_adult_female[0]}}</small>
     </div>
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Kanak-kanak Lelaki </b> </label>
     <div class="col-sm-1">
-       <input type="number" class="form-control form-control-sm" id="pmale" v-model="views.covid_paeds_male">
+       <input type="number" class="form-control form-control-sm" id="pmale" v-model="views.covid_paeds_male" disabled>
                          <small class="text-danger" v-if="errors.covid_paeds_male">{{errors.covid_paeds_male[0]}}</small>
       
     </div>
     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Kanak-kanak Perempuan </b></label>
     <div class="col-sm-1">
-       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="views.covid_paeds_female">
+       <input type="number" class="form-control form-control-sm" id="pfemale" v-model="views.covid_paeds_female" disabled>
                          <small class="text-danger" v-if="errors.covid_paeds_female">{{errors.covid_paeds_female[0]}}</small>
       
     </div>
@@ -1061,13 +1061,13 @@
                              <div class="form-group row">
     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"> <code>*</code> <b>Local </b> </label>
     <div class="col-sm-1">
-      <input type="number" class="form-control form-control-sm"  id="male" v-model="views.covid_local">
+      <input type="number" class="form-control form-control-sm"  id="male" v-model="views.covid_local" disabled>
       
                          <small class="text-danger" v-if="errors.covid_local">{{errors.covid_local[0]}}</small>
     </div>
     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><code>*</code> <b>Non-local </b></label>
     <div class="col-sm-1">
-      <input type="number" class="form-control form-control-sm" id="female" v-model="views.covid_non_local" >
+      <input type="number" class="form-control form-control-sm" id="female" v-model="views.covid_non_local" disabled>
       
                          <small class="text-danger" v-if="errors.covid_non_local">{{errors.covid_non_local[0]}}</small>
     </div>
