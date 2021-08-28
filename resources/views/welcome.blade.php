@@ -112,7 +112,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
            
           <router-link class="collapse-item" to="/dailyreport">PKRC</router-link>
-          <router-link class="collapse-item" to="/nursingreport">Nursing Report</router-link>
+          <a class="collapse-item" href="https://his.hospbeluran.fastq.co/nursingreport">Nursing Report</a>
           <router-link class="collapse-item" to="/">Vaccination</router-link>
           <router-link class="collapse-item" to="/nursing">PPE</router-link>
           
@@ -376,7 +376,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span   class="ml-2 d-none d-lg-inline text-white small"> Logged in: <b><?php echo "<div id='Loggeduser'></div>";?></b> </span>
+                <span   class="text-white small"> Logged in: <b><?php echo "<div id='Loggeduser'></div>";?></b> </span>
                 
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
